@@ -1,9 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Hello World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>VersaVoice</title>
+    <script src="./static/tailwind.js"></script>
+    <script src="./static/vue.global.js"></script>
+    <script src="./static/flowbite.min.js"></script>
+    <script src="./static/d3.v7.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style type="text/tailwindcss">
+        @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      a[href^="http"] {
+        @apply text-blue-500;
+      }
+
+      a:hover {
+        @apply text-blue-700 underline;
+      }
+
+      h1 {
+        @apply mb-6 text-4xl font-bold text-gray-900 text-center;
+      }
+
+      h2 {
+        @apply mb-3 pt-4 text-2xl font-bold tracking-tight text-gray-900;
+      }
+
+      h4 {
+        @apply mb-4 pt-12 text-3xl font-semibold text-gray-900;
+      }
+
+      h5 {
+        @apply mb-3 pt-4 text-2xl font-bold tracking-tight text-gray-900;
+      }
+
+      p {
+        @apply mb-4 font-normal text-gray-900 leading-relaxed;
+      }
+    }
+
+    @layer components {
+      .list-select {
+        @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0;
+      }
+
+      .tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 8px;
+        font: 12px sans-serif;
+        background: lightsteelblue;
+        border: 0;
+        border-radius: 8px;
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      .text-p {
+        @apply mb-4 font-normal text-gray-900 leading-relaxed;
+      }
+
+      .author {
+        @apply font-medium mr-2 pb-1 text-gray-900 inline-block text-base;
+      }
+
+      .author a {
+          @apply text-gray-900;
+        }
+
+      .affiliation {
+        @apply font-medium mr-2 pb-1 text-gray-900 block text-base;
+      }
+    }
+  </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {}
+                }
+            }
+        }
+    </script>
 </head>
+
 <body>
-    Hello World
+    <div id="app">
+
+        <nav class="bg-white fixed w-full z-20 top-0 start-0 border-gray-200 border-b border-gray-200"
+            style="font-weight: bold;">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
+                <button data-collapse-toggle="navbar-default" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+
+            </div>
+        </nav>
+
+
+        <div class="p-5 md:p-0 mt-16 max-w-screen-xl mx-auto">
+            <div class="p-6" id="home">
+                <div class="mt-8 mb-8">
+                    <h1>Bridging Controllable Speech and Singing Voice Generation via Unified Prosody Learning</h1>
+                </div>
+
+
+                <div class="mx-auto mt-8 mb-16">
+                    <div class="max-w-[900px] mx-auto mt-8 mb-16">
+                        <h2>Abstract</h2>
+                        <p class="text-p">
+                            Controllable human voice generation, particularly for expressive domains like singing,
+                            remains a significant challenge. This paper introduces VersaVoice, a unified framework for
+                            controllable speech and singing voice generation. To tackle issues like the scarcity of
+                            annotated singing data and to enable flexible controllability, VersaVoice introduces two
+                            audio tokenizers: (1) a music-notation-free prosody tokenizer that captures prosody and
+                            melody from speech, singing, and even instrumental sounds, and (2) a low-frame-rate
+                            content-style tokenizer that encodes linguistic content, prosody, and style in human voice
+                            while achieving timbre disentanglement. VersaVoice consists of an auto-regressive (AR)
+                            content-style modeling stage, which aims to enable controllability over text, prosody, and
+                            style, as well as a flow-matching acoustic modeling stage that allows for timbre control.
+                            Particularly, during pre-training of the AR model, we propose both explicit and implicit
+                            prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance
+                            the AR model’s ability to follow text and prosody, we design a multi-objective post-training
+                            task that integrates both intelligibility and prosody similarity alignment. Experimental
+                            results show that unified modeling in VersaVoice brings mutual benefits to both speech and
+                            singing voice generation. Additionally, VersaVoice’s effectiveness across a wide range of
+                            synthesis, conversion, and editing tasks for both speech and singing further demonstrates
+                            its strong generalization ability and versatility.
+
+                        </p>
+                    </div>
+
+                    <div class="mt-8 mb-8" id="gallery">
+                        <h4>What can VersaVoice do?</h4>
+                        <div class="flex mx-auto justify-center max-w-screen-lg py-8">
+                            <img src="static/pipeline.png"></img>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-8 mb-8">
+                        <p>
+                            We will showcase the diverse capabilities of Vevo through the following examples.
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+
 </html>
