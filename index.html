@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>VersaVoice</title>
-    <script src="./static/tailwind.js"></script>
-    <script src="./static/vue.global.js"></script>
-    <script src="./static/flowbite.min.js"></script>
-    <script src="./static/d3.v7.min.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>VersaVoice</title>
+  <script src="./static/tailwind.js"></script>
+  <script src="./static/vue.global.js"></script>
+  <script src="./static/flowbite.min.js"></script>
+  <script src="./static/d3.v7.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <style type="text/tailwindcss">
-        @tailwind base;
+  <style type="text/tailwindcss">
+    @tailwind base;
     @tailwind components;
     @tailwind utilities;
 
@@ -82,83 +82,551 @@
     }
   </style>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {}
-                }
-            }
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {}
         }
-    </script>
+      }
+    }
+  </script>
 </head>
 
 <body>
-    <div id="app">
+  <div id="app">
 
-        <nav class="bg-white fixed w-full z-20 top-0 start-0 border-gray-200 border-b border-gray-200"
-            style="font-weight: bold;">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
-                <button data-collapse-toggle="navbar-default" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                    aria-controls="navbar-default" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
+    <nav class="bg-white fixed w-full z-20 top-0 start-0 border-gray-200 border-b border-gray-200"
+      style="font-weight: bold;">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
+        <button data-collapse-toggle="navbar-default" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
 
-            </div>
-        </nav>
-
-
-        <div class="p-5 md:p-0 mt-16 max-w-screen-xl mx-auto">
-            <div class="p-6" id="home">
-                <div class="mt-8 mb-8">
-                    <h1>Bridging Controllable Speech and Singing Voice Generation via Unified Prosody Learning</h1>
-                </div>
+      </div>
+    </nav>
 
 
-                <div class="mx-auto mt-8 mb-16">
-                    <div class="max-w-[900px] mx-auto mt-8 mb-16">
-                        <h2>Abstract</h2>
-                        <p class="text-p">
-                            Controllable human voice generation, particularly for expressive domains like singing,
-                            remains a significant challenge. This paper introduces VersaVoice, a unified framework for
-                            controllable speech and singing voice generation. To tackle issues like the scarcity of
-                            annotated singing data and to enable flexible controllability, VersaVoice introduces two
-                            audio tokenizers: (1) a music-notation-free prosody tokenizer that captures prosody and
-                            melody from speech, singing, and even instrumental sounds, and (2) a low-frame-rate
-                            content-style tokenizer that encodes linguistic content, prosody, and style in human voice
-                            while achieving timbre disentanglement. VersaVoice consists of an auto-regressive (AR)
-                            content-style modeling stage, which aims to enable controllability over text, prosody, and
-                            style, as well as a flow-matching acoustic modeling stage that allows for timbre control.
-                            Particularly, during pre-training of the AR model, we propose both explicit and implicit
-                            prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance
-                            the AR model’s ability to follow text and prosody, we design a multi-objective post-training
-                            task that integrates both intelligibility and prosody similarity alignment. Experimental
-                            results show that unified modeling in VersaVoice brings mutual benefits to both speech and
-                            singing voice generation. Additionally, VersaVoice’s effectiveness across a wide range of
-                            synthesis, conversion, and editing tasks for both speech and singing further demonstrates
-                            its strong generalization ability and versatility.
-
-                        </p>
-                    </div>
-
-                    <div class="mt-8 mb-8" id="gallery">
-                        <!-- <h4>What can VersaVoice do?</h4> -->
-                        <div class="flex mx-auto justify-center max-w-screen-lg py-8">
-                            <img src="static/pipeline.png"></img>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
+    <div class="p-5 md:p-0 mt-16 max-w-screen-xl mx-auto">
+      <div class="p-6" id="home">
+        <div class="mt-8 mb-8">
+          <h1>Bridging Controllable Speech and Singing Voice Generation via Unified Prosody Learning</h1>
         </div>
+
+
+        <div class="mx-auto mt-8 mb-16">
+          <div class="max-w-[900px] mx-auto mt-8 mb-16">
+            <h2>Abstract</h2>
+            <p class="text-p">
+              Controllable human voice generation, particularly for expressive domains like singing,
+              remains a significant challenge. This paper introduces VersaVoice, a unified framework for
+              controllable speech and singing voice generation. To tackle issues like the scarcity of
+              annotated singing data and to enable flexible controllability, VersaVoice introduces two
+              audio tokenizers: (1) a music-notation-free prosody tokenizer that captures prosody and
+              melody from speech, singing, and even instrumental sounds, and (2) a low-frame-rate
+              content-style tokenizer that encodes linguistic content, prosody, and style in human voice
+              while achieving timbre disentanglement. VersaVoice consists of an auto-regressive (AR)
+              content-style modeling stage, which aims to enable controllability over text, prosody, and
+              style, as well as a flow-matching acoustic modeling stage that allows for timbre control.
+              Particularly, during pre-training of the AR model, we propose both explicit and implicit
+              prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance
+              the AR model’s ability to follow text and prosody, we design a multi-objective post-training
+              task that integrates both intelligibility and prosody similarity alignment. Experimental
+              results show that unified modeling in VersaVoice brings mutual benefits to both speech and
+              singing voice generation. Additionally, VersaVoice’s effectiveness across a wide range of
+              synthesis, conversion, and editing tasks for both speech and singing further demonstrates
+              its strong generalization ability and versatility.
+
+            </p>
+          </div>
+
+          <div class="mt-8 mb-8" id="gallery">
+            <h4>What can VersaVoice do?</h4>
+            <div class="flex mx-auto justify-center max-w-screen-lg py-8">
+              <img src="static/pipeline.png"></img>
+            </div>
+            <div class="flex mx-auto justify-center max-w-screen-lg py-8">
+              <img src="static/supported_tasks.png"></img>
+            </div>
+          </div>
+
+          <div class="mt-8 mb-8">
+            <p>
+              We will showcase the diverse capabilities of VersaVoice through the following examples.
+            </p>
+          </div>
+
+          <div class="mt-8 mb-8">
+            <h5>Extend Zero-shot TTS for Singing Voice Generation</h5>
+          </div>
+
+          <div class="w-full overflow-x-auto">
+            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+              <table class="table-gallery">
+                <thead>
+                  <tr>
+                    <th style="text-align: center; width: 9%;">Task</th>
+                    <th style="text-align: center; width: 15%;">Target Text</th>
+                    <th style="text-align: center; width: 19%;">Prosodic Source</th>
+                    <th style="text-align: center; width: 19%;">Style Reference</th>
+                    <th style="text-align: center; width: 19%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 19%;">Results</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Text to Speech</b>
+                    </td>
+                    <td>
+                      In just a heartbeat, I can traverse oceans, cross mountains, and explore cities that I've only
+                      dreamed of.
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td colspan="2">
+                      <audio controls preload="auto">
+                        <source src="data/gallery/tts_ref.wav">
+                      </audio>
+                      Who would've imagined that people could really turn into water...
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/tts_gen.wav">
+                      </audio>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;" rowspan="2">
+                      <b>Text to Singing</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td colspan="2">
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/jaychou.wav">
+                      </audio>
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/taiyizhenren.wav">
+                      </audio>
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/ttsing_gen.wav">
+                      </audio>
+                    </td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mt-8 mb-8">
+            <h5>Versatile Melody Controls</h5>
+          </div>
+
+          <div class="w-full overflow-x-auto">
+            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+              <table class="table-gallery">
+                <thead>
+                  <tr>
+                    <th style="text-align: center; width: 9%;">Task</th>
+                    <th style="text-align: center; width: 15%;">Target Text</th>
+                    <th style="text-align: center; width: 19%;">Prosodic Source</th>
+                    <th style="text-align: center; width: 19%;">Style Reference</th>
+                    <th style="text-align: center; width: 19%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 19%;">Results</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Text to Speech</b>
+                    </td>
+                    <td>
+                      In just a heartbeat, I can traverse oceans, cross mountains, and explore cities that I've only
+                      dreamed of.
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td colspan="2">
+                      <audio controls preload="auto">
+                        <source src="data/gallery/tts_ref.wav">
+                      </audio>
+                      Who would've imagined that people could really turn into water...
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/tts_gen.wav">
+                      </audio>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;" rowspan="2">
+                      <b>Text to Singing</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td colspan="2">
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/jaychou.wav">
+                      </audio>
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/taiyizhenren.wav">
+                      </audio>
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/ttsing_gen.wav">
+                      </audio>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Singing Voice Synthesis</b>
+                    </td>
+                    <td>
+                      It's always just me facing the sky, my mind roaming freely like the clouds.
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/svs_melody.wav">
+                      </audio>
+                      To include the midi pic
+                    </td>
+                    <td colspan="2">
+                      <audio controls preload="auto">
+                        <source src="data/gallery/adele_raw.wav">
+                      </audio>
+                      <span class="text-red-500"><i> Adele</i></span> (To mix)
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/svs_adele_gen.wav">
+                      </audio>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;" rowspan="2">
+                      <b>Voice Conversion</b>
+                    </td>
+                    <td rowspan="2">
+                      TBD
+                    </td>
+                    <td rowspan="2">
+                      /
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td colspan="2">
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;" rowspan="2">
+                      <b>Singing Voice Conversion</b>
+                    </td>
+                    <td rowspan="2">
+                      TBD
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      TBD
+                    </td>
+                    <td colspan="2">
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Speech Editing</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Singing Lyric Editing</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;" rowspan="2">
+                      <b>Humming to Singing</b>
+                    </td>
+                    <td>
+                      Moonlight dancing through the starry sky. Snowflakes falling in the winter night.
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/whistle_melody.wav">
+                      </audio>
+                      Whisper source
+                    </td>
+                    <td colspan="2">
+                      <audio controls preload="auto">
+                        <source src="data/gallery/adele_raw.wav">
+                      </audio>
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/whistle_adele_gen.wav">
+                      </audio>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      你是我的小呀小苹果，怎么爱，不嫌多
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/humming_alisi.m4a">
+                      </audio>
+                      Beethoven's Für Elise
+                    </td>
+                    <td colspan="2">
+                      <audio controls preload="auto">
+                        <source src="data/gallery/taiyizhenren.wav">
+                      </audio>
+                    </td>
+                    <td>
+                      <audio controls preload="auto">
+                        <source src="data/gallery/humming_alisi_gen.wav">
+                      </audio>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Instrument to Singing</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td colspan="2">
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Emotion Conversion</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Accent Conversion</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Whisper-to-Normal Conversion</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      /
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Singing Style Conversion</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
     </div>
+  </div>
 
 
 </body>
