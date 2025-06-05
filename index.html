@@ -151,9 +151,9 @@
             <div class="flex mx-auto justify-center max-w-screen-lg py-8">
               <img src="static/pipeline.png"></img>
             </div>
-            <div class="flex mx-auto justify-center max-w-screen-lg py-8">
+            <!-- <div class="flex mx-auto justify-center max-w-screen-lg py-8">
               <img src="static/supported_tasks.png"></img>
-            </div>
+            </div> -->
           </div>
 
           <div class="mt-8 mb-8">
@@ -172,8 +172,8 @@
                 <thead>
                   <tr>
                     <th style="text-align: center; width: 9%;">Task</th>
-                    <th style="text-align: center; width: 15%;">Target Text</th>
-                    <th style="text-align: center; width: 19%;">Prosodic Source</th>
+                    <th style="text-align: center; width: 22%;">Target Text</th>
+                    <th style="text-align: center; width: 12%;">Prosodic Source</th>
                     <th style="text-align: center; width: 19%;">Style Reference</th>
                     <th style="text-align: center; width: 19%;">Timbre Reference</th>
                     <th style="text-align: center; width: 19%;">Results</th>
@@ -181,14 +181,14 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td style="background-color: #f4f4f4;">
+                    <td style="background-color: #f4f4f4;" rowspan="2">
                       <b>Text to Speech</b>
                     </td>
                     <td>
                       In just a heartbeat, I can traverse oceans, cross mountains, and explore cities that I've only
                       dreamed of.
                     </td>
-                    <td>
+                    <td rowspan="4">
                       /
                     </td>
                     <td colspan="2">
@@ -205,15 +205,29 @@
                   </tr>
 
                   <tr>
+                    <td>
+                      TBD.
+                    </td>
+
+                    <td>
+                      TBD (an accented reference)
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
                     <td style="background-color: #f4f4f4;" rowspan="2">
                       <b>Text to Singing</b>
                     </td>
                     <td>
                       TBD
                     </td>
-                    <td>
-                      /
-                    </td>
+
                     <td colspan="2">
                       TBD
                     </td>
@@ -226,9 +240,7 @@
                     <td>
                       我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我
                     </td>
-                    <td>
-                      /
-                    </td>
+
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/jaychou.wav">
@@ -262,83 +274,65 @@
                 <thead>
                   <tr>
                     <th style="text-align: center; width: 9%;">Task</th>
-                    <th style="text-align: center; width: 15%;">Target Text</th>
-                    <th style="text-align: center; width: 19%;">Prosodic Source</th>
-                    <th style="text-align: center; width: 19%;">Style Reference</th>
-                    <th style="text-align: center; width: 19%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 22%;">Target Text</th>
+                    <th style="text-align: center; width: 20%;">Prosodic Source</th>
+                    <th style="text-align: center; width: 15%;">Style Reference</th>
+                    <th style="text-align: center; width: 15%;">Timbre Reference</th>
                     <th style="text-align: center; width: 19%;">Results</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td style="background-color: #f4f4f4;">
-                      <b>Text to Speech</b>
-                    </td>
-                    <td>
-                      In just a heartbeat, I can traverse oceans, cross mountains, and explore cities that I've only
-                      dreamed of.
-                    </td>
-                    <td>
-                      /
-                    </td>
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/tts_ref.wav">
-                      </audio>
-                      Who would've imagined that people could really turn into water...
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/tts_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
 
                   <tr>
                     <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Text to Singing</b>
+                      <b>Humming to Singing</b>
                     </td>
                     <td>
-                      TBD
+                      Moonlight dancing through the starry sky. Snowflakes falling in the winter night.
                     </td>
                     <td>
-                      /
+                      <audio controls preload="auto">
+                        <source src="data/gallery/whistle_melody.wav">
+                      </audio>
+                      Whisper source
                     </td>
                     <td colspan="2">
-                      TBD
+                      <audio controls preload="auto">
+                        <source src="data/gallery/adele_raw.wav">
+                      </audio>
                     </td>
                     <td>
-                      TBD
+                      <audio controls preload="auto">
+                        <source src="data/gallery/whistle_adele_gen.wav">
+                      </audio>
                     </td>
                   </tr>
 
                   <tr>
                     <td>
-                      我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我
-                    </td>
-                    <td>
-                      /
+                      你是我的小呀小苹果，怎么爱，不嫌多
                     </td>
                     <td>
                       <audio controls preload="auto">
-                        <source src="data/gallery/jaychou.wav">
+                        <source src="data/gallery/humming_alisi.m4a">
                       </audio>
+                      Beethoven's Für Elise
                     </td>
-                    <td>
+                    <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/taiyizhenren.wav">
                       </audio>
                     </td>
                     <td>
                       <audio controls preload="auto">
-                        <source src="data/gallery/ttsing_gen.wav">
+                        <source src="data/gallery/humming_alisi_gen.wav">
                       </audio>
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="background-color: #f4f4f4;">
-                      <b>Singing Voice Synthesis</b>
+                    <td style="background-color: #f4f4f4;" rowspan="2">
+                      <b>Instrument to Singing</b>
                     </td>
                     <td>
                       It's always just me facing the sky, my mind roaming freely like the clouds.
@@ -362,6 +356,111 @@
                     </td>
                   </tr>
 
+
+                  <tr>
+
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD (a violin/flute melody)
+                    </td>
+                    <td colspan="2">
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mt-8 mb-8">
+            <h5>Unified Editing</h5>
+          </div>
+
+          <div class="w-full overflow-x-auto">
+            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+              <table class="table-gallery">
+                <thead>
+                  <tr>
+                    <th style="text-align: center; width: 9%;">Task</th>
+                    <th style="text-align: center; width: 15%;">Target Text</th>
+                    <th style="text-align: center; width: 19%;">Prosodic Source</th>
+                    <th style="text-align: center; width: 19%;">Style Reference</th>
+                    <th style="text-align: center; width: 19%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 19%;">Results</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Speech Editing</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Singing Lyric Editing</b>
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                    <td>
+                      TBD
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mt-8 mb-8">
+            <h5>Unified Voice Conversion and Singing Voice Conversion</h5>
+          </div>
+
+          <div class="w-full overflow-x-auto">
+            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+              <table class="table-gallery">
+                <thead>
+                  <tr>
+                    <th style="text-align: center; width: 9%;">Task</th>
+                    <th style="text-align: center; width: 15%;">Target Text</th>
+                    <th style="text-align: center; width: 19%;">Prosodic Source</th>
+                    <th style="text-align: center; width: 19%;">Style Reference</th>
+                    <th style="text-align: center; width: 19%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 19%;">Results</th>
+                  </tr>
+                </thead>
+                <tbody>
                   <tr>
                     <td style="background-color: #f4f4f4;" rowspan="2">
                       <b>Voice Conversion</b>
@@ -425,112 +524,31 @@
                     </td>
                   </tr>
 
-                  <tr>
-                    <td style="background-color: #f4f4f4;">
-                      <b>Speech Editing</b>
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                  </tr>
 
-                  <tr>
-                    <td style="background-color: #f4f4f4;">
-                      <b>Singing Lyric Editing</b>
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Humming to Singing</b>
-                    </td>
-                    <td>
-                      Moonlight dancing through the starry sky. Snowflakes falling in the winter night.
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/whistle_melody.wav">
-                      </audio>
-                      Whisper source
-                    </td>
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/adele_raw.wav">
-                      </audio>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/whistle_adele_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
 
-                  <tr>
-                    <td>
-                      你是我的小呀小苹果，怎么爱，不嫌多
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/humming_alisi.m4a">
-                      </audio>
-                      Beethoven's Für Elise
-                    </td>
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/taiyizhenren.wav">
-                      </audio>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/humming_alisi_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+          <div class="mt-8 mb-8">
+            <h5>Versatile Speech and Singing Style Conversions</h5>
+          </div>
 
+          <div class="w-full overflow-x-auto">
+            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+              <table class="table-gallery">
+                <thead>
                   <tr>
-                    <td style="background-color: #f4f4f4;">
-                      <b>Instrument to Singing</b>
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
-                    <td colspan="2">
-                      TBD
-                    </td>
-                    <td>
-                      TBD
-                    </td>
+                    <th style="text-align: center; width: 9%;">Task</th>
+                    <th style="text-align: center; width: 15%;">Target Text</th>
+                    <th style="text-align: center; width: 19%;">Prosodic Source</th>
+                    <th style="text-align: center; width: 19%;">Style Reference</th>
+                    <th style="text-align: center; width: 19%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 19%;">Results</th>
                   </tr>
+                </thead>
+                <tbody>
 
                   <tr>
                     <td style="background-color: #f4f4f4;">
@@ -620,7 +638,6 @@
               </table>
             </div>
           </div>
-
 
 
         </div>
