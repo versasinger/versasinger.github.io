@@ -158,7 +158,18 @@
 
           <div class="mt-8 mb-8">
             <p>
-              We will showcase the diverse capabilities of VersaVoice through the following examples.
+              <b><i>VersaVoice</i></b> is a <u>versa</u>tile and controllable <u>voice</u> generation framework designed
+              to
+              unify speech and singing voice. It
+              consists of an auto-regressive (AR) content-style modeling stage, which aims to enable
+              controllability over text, prosody, and style, as well as a flow-matching acoustic modeling stage that
+              allows for timbre control.
+            </p>
+            <p>
+              VersaVoice is able to support versatile synthesis, conversion, and editing tasks through a unified
+              inference pipeline. We will showcase its
+              capabilities through the following
+              examples.
             </p>
           </div>
 
@@ -173,10 +184,10 @@
                   <tr>
                     <th style="text-align: center; width: 9%;">Task</th>
                     <th style="text-align: center; width: 22%;">Target Text</th>
-                    <th style="text-align: center; width: 12%;">Prosodic Source</th>
-                    <th style="text-align: center; width: 19%;">Style Reference</th>
-                    <th style="text-align: center; width: 19%;">Timbre Reference</th>
-                    <th style="text-align: center; width: 19%;">Results</th>
+                    <!-- <th style="text-align: center; width: 10%;">Prosodic Source</th> -->
+                    <th style="text-align: center; width: 23%;">Style Reference</th>
+                    <th style="text-align: center; width: 23%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 23%;">Results</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -188,9 +199,9 @@
                       In just a heartbeat, I can traverse oceans, cross mountains, and explore cities that I've only
                       dreamed of.
                     </td>
-                    <td rowspan="4">
+                    <!-- <td rowspan="4">
                       /
-                    </td>
+                    </td> -->
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/tts_ref.wav">
@@ -216,19 +227,19 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_accent_ref.wav">
                       </audio>
-                      <!-- Hindi-accented, Male -->
+                      <i><span class="text-blue-500">Hindi-accented</span>, Male</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_timbre_ref.wav">
                       </audio>
-                      <!-- Mandarin, Female -->
+                      <i>Mandarin, <span class="text-red-500">Female</span></i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_gen.wav">
                       </audio>
-                      <!-- Hindi-accented, Female -->
+                      <i><span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span></i>
                     </td>
                   </tr>
 
@@ -244,7 +255,7 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <!-- Adele -->
+                      <i> Adele (British singer) </i>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -262,12 +273,13 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/jaychou.wav">
                       </audio>
-                      <!-- Rap -->
+                      <i> 周杰伦 (Chinese singer) </i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/taiyizhenren.wav">
                       </audio>
+                      <i> 太乙真人 (Chinese animated character) </i>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -284,8 +296,17 @@
 
                 </tbody>
               </table>
+
+              <p class="mt-4 text-base">
+                <i>
+                  <b>Note</b>: The prosodic
+                  source is not used during the inference.
+                </i>
+              </p>
+
             </div>
           </div>
+
 
           <div class="mt-8 mb-8">
             <h5>Versatile Melody Controls for Singing Voice Generation</h5>
@@ -298,10 +319,10 @@
                   <tr>
                     <th style="text-align: center; width: 9%;">Task</th>
                     <th style="text-align: center; width: 22%;">Target Text</th>
-                    <th style="text-align: center; width: 20%;">Prosodic Source</th>
-                    <th style="text-align: center; width: 15%;">Style Reference</th>
-                    <th style="text-align: center; width: 15%;">Timbre Reference</th>
-                    <th style="text-align: center; width: 19%;">Results</th>
+                    <th style="text-align: center; width: 24%;">Prosodic Source</th>
+                    <th style="text-align: center; width: 12%;">Style Reference</th>
+                    <th style="text-align: center; width: 12%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 21%;">Results</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -317,13 +338,25 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/whistle_melody.wav">
                       </audio>
-                      <!-- Whistle -->
+                      <i>
+                        Whistle sound
+                        <br>
+                        <span class="text-gray-400 text-xs">
+                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=h5sP4JW0yDA"
+                            class="!text-gray-400 no-underline hover:!text-gray-700">the
+                            theme
+                            song of A Fistful
+                            of Dollars</a>)
+                        </span>
+                      </i>
+                      <br>
+
                     </td>
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <!-- Adele -->
+                      <i>Adele (British singer)</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -340,12 +373,21 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/humming_alisi.wav">
                       </audio>
-                      <!-- Beethoven's Für Elise -->
+                      <i>
+                        Humming sound
+                        <br>
+                        <span class="text-gray-400 text-xs">
+                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=q9bU12gXUyM"
+                            class="!text-gray-400 no-underline hover:!text-gray-700">Beethoven - Für
+                            Elise</a>)
+                        </span>
+                      </i>
                     </td>
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/taiyizhenren.wav">
                       </audio>
+                      <i>太乙真人 (Chinese animated character)</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -366,12 +408,20 @@
                         <source src="data/gallery/svs_melody.wav">
                       </audio>
                       <!-- To include the midi pic -->
+                      <i>
+                        Piano sound
+                        <br>
+                        <span class="text-gray-400 text-xs">
+                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=mRKTOZmX2cE"
+                            class="!text-gray-400 no-underline hover:!text-gray-700">罗大佑 - 童年</a>)
+                        </span>
+                      </i>
                     </td>
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <!-- <span class="text-red-500"><i> Adele</i></span> (To mix) -->
+                      <i>Adele (British singer)</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -388,14 +438,23 @@
                     </td>
                     <td>
                       <audio controls preload="auto">
-                        <source src="data/gallery/humming_taiyang_melody.wav">
+                        <source src="data/gallery/humming_taiyang_melody_raw.wav">
                       </audio>
+                      <i>
+                        Trumpet sound
+                        <br>
+                        <span class="text-gray-400 text-xs">
+                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=IYU-BgtSwJk"
+                            class="!text-gray-400 no-underline hover:!text-gray-700">Joe Hisaishi - The Sun Also
+                            Rises</a>)
+                        </span>
+                      </i>
                     </td>
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/sunyanzi.wav">
                       </audio>
-                      <!-- Sun Yanzi -->
+                      <i>孙燕姿 (Chinese singer)</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -438,10 +497,13 @@
                       </audio>
                     </td>
                     <td>
-                      Who would've imagined that people could really turn into water...
+                      Who would've imagined that people could <span class="bg-red-100  px-0.05">really</span>
+                      turn
+                      into <span class="bg-red-100  px-0.05">water</span>...
                     </td>
                     <td>
-                      Who would've imagined that people could truly turn into fire...
+                      Who would've imagined that people could <span class="bg-blue-100  px-0.05">truly</span>
+                      turn into <span class="bg-blue-100  px-0.05">fire</span>...
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -455,13 +517,14 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/houyi_raw.wav">
                       </audio>
-                      <!-- To mix -->
                     </td>
                     <td>
-                      没什么是一发利箭不能解决的。如果有，那就两发。
+                      没什么是<span class="bg-red-100  px-0.05">一</span>发利箭<span
+                        class="bg-red-100  px-0.05">不能</span>解决的。如果有，那就<span class="bg-red-100  px-0.05">两发</span>。
                     </td>
                     <td>
-                      没什么是两发利箭可以解决的。如果有，那就五发。
+                      没什么是<span class="bg-blue-100  px-0.05">两</span>发利箭<span
+                        class="bg-blue-100  px-0.05">可以</span>解决的。如果有，那就<span class="bg-blue-100  px-0.05">五发</span>。
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -479,11 +542,17 @@
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
                     </td>
-                    <td rowspan="2">
-                      Never mind, I'll find someone like you. I wish nothing but
+                    <td>
+                      Never mind, <span class="bg-red-100  px-0.05">I'll</span> find <span
+                        class="bg-red-100  px-0.05">someone</span> like <span class="bg-red-100  px-0.05">you</span>.
+                      <span class="bg-red-100  px-0.05">I
+                      </span>wish nothing but
                     </td>
                     <td>
-                      Never mind, you'll find anyone like me. You wish nothing but
+                      Never mind, <span class="bg-blue-100  px-0.05">you'll</span> find <span
+                        class="bg-blue-100  px-0.05">anyone</span> like <span class="bg-blue-100  px-0.05">me</span>.
+                      <span class="bg-blue-100  px-0.05">You
+                      </span>wish nothing but
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -494,7 +563,15 @@
 
                   <tr>
                     <td>
-                      Alright, I'll turn over a new page. I wish for calm
+                      <span class="bg-red-100  px-0.05">Never mind</span>, I'll</span> <span
+                        class="bg-red-100  px-0.05">find someone like you</span>.
+                      I wish
+                      <span class="bg-red-100  px-0.05">nothing but</span>
+                    </td>
+                    <td>
+                      <span class="bg-blue-100  px-0.05">Alright</span>, I'll <span class="bg-blue-100  px-0.05">turn
+                        over a new page</span>. I wish
+                      <span class="bg-blue-100  px-0.05">for calm</span>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -509,11 +586,15 @@
                         <source src="data/gallery/jaychou.wav">
                       </audio>
                     </td>
-                    <td rowspan="2">
-                      对这个世界如果你有太多的抱怨，跌倒了就不该继续往前走，为什么，人要这么的脆弱堕
+                    <td>
+                      对<span class="bg-red-100  px-0.05">这个世界</span>如果你有太多的<span
+                        class="bg-red-100  px-0.05">抱怨</span>，跌倒了就不该<span
+                        class="bg-red-100  px-0.05">继续往前走</span>，为什么，人要这么的<span class="bg-red-100  px-0.05">脆弱</span>堕落
                     </td>
                     <td>
-                      对你的人生如果你有太多的期盼，跌倒了就不该低头认输，为什么，人要这么的彷徨堕
+                      对<span class="bg-blue-100  px-0.05">你的人生</span>如果你有太多的<span
+                        class="bg-blue-100  px-0.05">期盼</span>，跌倒了就不该<span
+                        class="bg-blue-100  px-0.05">低头认输</span>，为什么，人要这么的<span class="bg-blue-100  px-0.05">彷徨</span>堕落
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -524,7 +605,16 @@
 
                   <tr>
                     <td>
-                      对强化学习如果实验遇到了瓶颈，损失值就不该太大动荡，看梯度啊，网络何时被优化好
+                      对<span class="bg-red-100  px-0.05">这个世界</span>如果<span
+                        class="bg-red-100  px-0.05">你有太多的抱怨</span>，<span class="bg-red-100  px-0.05">跌倒了</span>就不该<span
+                        class="bg-red-100  px-0.05">继续往前走</span>，<span class="bg-red-100  px-0.05">为什么</span>，<span
+                        class="bg-red-100  px-0.05">人要这么的脆弱堕</span>
+                    </td>
+                    <td>
+                      对<span class="bg-blue-100  px-0.05">强化学习</span>如果<span
+                        class="bg-blue-100  px-0.05">实验遇到了瓶颈</span>，<span
+                        class="bg-blue-100  px-0.05">损失值</span>就不该<span class="bg-blue-100  px-0.05">太大动荡</span>，<span
+                        class="bg-blue-100  px-0.05">看梯度啊</span>，<span class="bg-blue-100  px-0.05">网络何时被优化好</span>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -547,11 +637,11 @@
               <table class="table-gallery">
                 <thead>
                   <tr>
-                    <th style="text-align: center; width: 14%;">Task</th>
-                    <th style="text-align: center; width: 25%;">Source Audio</th>
-                    <th style="text-align: center; width: 11%;">Style Reference</th>
-                    <th style="text-align: center; width: 25%;">Timbre Reference</th>
-                    <th style="text-align: center; width: 25%;">Results</th>
+                    <th style="text-align: center; width: 8%;">Task</th>
+                    <th style="text-align: center; width: 23%;">Source Audio</th>
+                    <th style="text-align: center; width: 23%;">Style Reference</th>
+                    <th style="text-align: center; width: 23%;">Timbre Reference</th>
+                    <th style="text-align: center; width: 23%;">Results</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -563,35 +653,39 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/tts_ref.wav">
                       </audio>
-                      Who would've imagined that people could really turn into water...
+                      <!-- Who would've imagined that people could really turn into water... -->
+                      <i><span class="text-blue-500">American-accented</span>, Female</i>
                     </td>
                     <td>
                       /
                     </td>
-                    <td>
+                    <td rowspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_accent_ref.wav">
                       </audio>
-                      <!-- Hindi-accented -->
+                      <i>Hindi-accented, <span class="text-red-500">Male</span></i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/vc_style_preserved.wav">
                       </audio>
+                      <i><span class="text-blue-500">American-accented</span>, <span
+                          class="text-red-500">Male</span></i>
                     </td>
                   </tr>
 
                   <tr>
-                    <td colspan="2">
+                    <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_accent_ref.wav">
                       </audio>
-                      <!-- Hindi-accented -->
+                      <i><span class="text-blue-500">Hindi-accented</span>, Male</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/vc_style_converted.wav">
                       </audio>
+                      <i><span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Male</span></i>
                     </td>
                   </tr>
 
@@ -603,16 +697,17 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/mj.wav">
                       </audio>
-                      What about sunrise? What about rain? What about all the things that you said we were to gain?
+                      <!-- What about sunrise? What about rain? What about all the things that you said we were to gain? -->
+                      <i>Michael Jackson (American singer)</i>
                     </td>
                     <td>
                       /
                     </td>
-                    <td>
+                    <td rowspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <!-- Adele -->
+                      <i>Adele (British singer)</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -623,11 +718,11 @@
 
                   <tr>
 
-                    <td colspan="2">
+                    <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <!-- Adele -->
+                      <i>Adele (British singer)</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -668,19 +763,20 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/style_accent_input.wav">
                       </audio>
-                      I'm a versatile zero-shot voice cloner. I can mimic a wide range of vocal styles from either text
-                      or waveform as input.
+                      <!-- I'm a versatile zero-shot voice cloner. I can mimic a wide range of vocal styles from either text or waveform as input. -->
+                      <i>American-accented, <span class="text-red-500">Female</span></i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_accent_ref.wav">
                       </audio>
-                      <!-- Hindi-accented -->
+                      <i><span class="text-blue-500">Hindi-accented</span>, Male</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_accent_gen.wav">
                       </audio>
+                      <i><span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span></i>
                     </td>
                   </tr>
 
@@ -693,15 +789,15 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/taiyizhenren.wav">
                       </audio>
+                      <i><span class="text-blue-500">Emotional</span>, Male</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_emotion_gen.wav">
                       </audio>
+                      <i><span class="text-blue-500">Emotional</span>, <span class="text-red-500">Female</span></i>
                     </td>
                   </tr>
-
-
 
                   <tr>
                     <td style="background-color: #f4f4f4;">
@@ -711,17 +807,20 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/style_whisper2normal_input.wav">
                       </audio>
-                      Given the circumstances, isn't this a little unorthodox?
+                      <!-- Given the circumstances, isn't this a little unorthodox?-->
+                      <i>Whisper</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_whisper2normal_ref.wav">
                       </audio>
+                      <i>Normal</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_whisper2normal_gen.wav">
                       </audio>
+                      <i>Normal</i>
                     </td>
                   </tr>
 
@@ -733,17 +832,20 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_input.wav">
                       </audio>
-                      Girl why can't you wait, Girl why can't you wait till I fall out of love, won't
+                      <!-- Girl why can't you wait, Girl why can't you wait till I fall out of love, won't -->
+                      <i>Normal, <span class="text-red-500">Male</span></i>
                     </td>
                     <td rowspan="3">
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_ref.wav">
                       </audio>
+                      <i><span class="text-blue-500">Extensive vibratos and tempo rubato</span>, Female</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_gen.wav">
                       </audio>
+                      <i><span class="text-blue-500">More Vibratos</span>, <span class="text-red-500">Male</span></i>
                     </td>
                   </tr>
 
@@ -752,12 +854,14 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/taozhe.wav">
                       </audio>
-                      等待，我随时随地在等待
+                      <!-- 等待，我随时随地在等待 -->
+                      <i>陶喆 (Chinese singer)</i>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_taozhe_gen.wav">
                       </audio>
+                      <i><span class="text-blue-500">More Vibratos, Tempo rubato</span></i>
                     </td>
                   </tr>
 
@@ -766,6 +870,7 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_taozhe_gen2.wav">
                       </audio>
+                      <i><span class="text-blue-500">More Vibratos, Tempo rubato</span></i>
                     </td>
                   </tr>
 
