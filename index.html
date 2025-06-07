@@ -109,6 +109,31 @@
           </svg>
         </button>
 
+        <div class="hidden w-full md:block md:w-auto ml-auto" id="navbar-default">
+          <ul
+            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+            <li>
+              <a href="#home" class="list-select"><b>Home</b></a>
+            </li>
+            <li>
+              <a href="#tts" class="list-select"><b>TTS</b></a>
+            </li>
+            <li>
+              <a href="#melody" class="list-select"><b>Melody Control</b></a>
+            </li>
+            <li>
+              <a href="#editing" class="list-select"><b>Editing</b></a>
+            </li>
+            <li>
+              <a href="#vc" class="list-select"><b>VC and SVC</b></a>
+            </li>
+            <li>
+              <a href="#sc" class="list-select"><b>Style Conversion</b></a>
+            </li>
+
+          </ul>
+        </div>
+
       </div>
     </nav>
 
@@ -133,13 +158,13 @@
               content-style tokenizer that encodes linguistic content, prosody, and style in human voice
               while achieving timbre disentanglement. VersaVoice consists of an auto-regressive (AR)
               content-style modeling stage, which aims to enable controllability over text, prosody, and
-              style, as well as a flow-matching acoustic modeling stage that allows for timbre control.
+              style, as well as a flow-matching (FM) acoustic modeling stage that allows for timbre control.
               Particularly, during pre-training of the AR model, we propose both explicit and implicit
               prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance
-              the AR model’s ability to follow text and prosody, we design a multi-objective post-training
+              the AR model's ability to follow text and prosody, we design a multi-objective post-training
               task that integrates both intelligibility and prosody similarity alignment. Experimental
               results show that unified modeling in VersaVoice brings mutual benefits to both speech and
-              singing voice generation. Additionally, VersaVoice’s effectiveness across a wide range of
+              singing voice generation. Additionally, VersaVoice's effectiveness across a wide range of
               synthesis, conversion, and editing tasks for both speech and singing further demonstrates
               its strong generalization ability and versatility.
 
@@ -148,6 +173,18 @@
 
           <div class="mt-8 mb-8" id="gallery">
             <h4>What can VersaVoice do?</h4>
+            <p>
+              <b><i>VersaVoice</i></b> is a <u>versa</u>tile and controllable <u>voice</u> generation framework designed
+              to
+              unify speech and singing voice. It
+              consists of an auto-regressive (AR) content-style modeling stage, which aims to enable
+              controllability over text, prosody, and style, as well as a flow-matching (FM) acoustic modeling stage
+              that
+              allows for timbre control. It is able to support versatile synthesis, conversion, and editing tasks
+              through a unified
+              inference pipeline.
+            </p>
+
             <div class="flex mx-auto justify-center max-w-screen-lg py-8">
               <img src="static/pipeline.png"></img>
             </div>
@@ -156,25 +193,37 @@
             </div> -->
           </div>
 
-          <div class="mt-8 mb-8">
-            <p>
-              <b><i>VersaVoice</i></b> is a <u>versa</u>tile and controllable <u>voice</u> generation framework designed
-              to
-              unify speech and singing voice. It
-              consists of an auto-regressive (AR) content-style modeling stage, which aims to enable
-              controllability over text, prosody, and style, as well as a flow-matching acoustic modeling stage that
-              allows for timbre control.
-            </p>
-            <p>
-              VersaVoice is able to support versatile synthesis, conversion, and editing tasks through a unified
-              inference pipeline. We will showcase its
-              capabilities through the following
-              examples.
-            </p>
+          <div class="mt-8">
+            We will showcase VersaVoice's capabilities through the following examples.
+          </div>
+
+          <div class="mt-0 mb-8 pt-10" id="tts">
+            <h5>Extend Zero-Shot TTS to Singing Voice Domain</h5>
           </div>
 
           <div class="mt-8 mb-8">
-            <h5>Extend Zero-Shot TTS to Singing Voice Domain</h5>
+            <p class="mt-4 text-base">
+              Under the standard zero-shot text-to-speech (TTS) inference pipeline, VersaVoice exhibits two unique
+              characteristics:
+            </p>
+
+            <ul class="flex flex-col space-y-4 list-disc pl-6 text-base text-gray-700">
+              <li class="me-2">
+                Leveraging our proposed <i>timbre-disentangled content-style tokenizer</i>, VersaVoice enables
+                <b>independent
+                  control over style and timbre</b> through the
+                utilization of different style and timbre references (as demonstrated in the second and fourth
+                cases of the following table).
+              </li>
+              <li class="me-2">
+                VersaVoice provides supports for <i>using singing voice data as reference prompts</i>, which we define
+                as the
+                <b>text-to-singing</b>
+                task. Notably, even without prosodic contour control conditions (i.e., without using an explicit
+                prosodic source), the synthesized output effectively follows and extends the melodic pattern of the
+                reference, functioning as melody imitation or continuation.
+              </li>
+            </ul>
           </div>
 
           <div class="w-full overflow-x-auto">
@@ -207,7 +256,7 @@
                         <source src="data/gallery/tts_ref.wav">
                       </audio>
                       <!-- Who would've imagined that people could really turn into water... -->
-                      <!-- Child, High-pitched -->
+                      <!-- <i><span class="text-blue-500">High-pitched</span>, -->
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -227,19 +276,19 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_accent_ref.wav">
                       </audio>
-                      <i><span class="text-blue-500">Hindi-accented</span>, Male</i>
+                      <span class="text-blue-500">Hindi-accented</span>, Male
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_timbre_ref.wav">
                       </audio>
-                      <i>Mandarin, <span class="text-red-500">Female</span></i>
+                      Mandarin, <span class="text-red-500">Female</span>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_gen.wav">
                       </audio>
-                      <i><span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span></i>
+                      <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span>
                     </td>
                   </tr>
 
@@ -248,14 +297,14 @@
                       <b>Text to Singing</b>
                     </td>
                     <td>
-                      Don’t forget me, I’m calling your name. I remember you said, love’s not always the same.
+                      Don't forget me, I'm calling your name. I remember you said, love's not always the same.
                     </td>
 
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <i> Adele (British singer) </i>
+                      Adele (British singer)
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -273,13 +322,13 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/jaychou.wav">
                       </audio>
-                      <i> 周杰伦 (Chinese singer) </i>
+                      周杰伦 (Chinese singer)
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/taiyizhenren.wav">
                       </audio>
-                      <i> 太乙真人 (Chinese animated character) </i>
+                      太乙真人 (Chinese animated character)
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -297,20 +346,30 @@
                 </tbody>
               </table>
 
-              <p class="mt-4 text-base">
+              <p class="mt-2 text-sm text-gray-600 italic">
                 <i>
                   <b>Note</b>: The prosodic
                   source is not used during the inference.
                 </i>
               </p>
-
             </div>
           </div>
 
 
-          <div class="mt-8 mb-8">
+          <div class="mt-0 mb-8 pt-10" id="melody">
             <h5>Versatile Melody Controls for Singing Voice Generation</h5>
           </div>
+
+          <div class="mt-8 mb-8">
+            <p class="mt-4 text-base">
+              VersaVoice provides supports for <i>using an explicit prosodic source to control the prosody/melody of the
+                synthesized output</i>. Particularly, it accommodates various forms of prosodic sources, including
+              <b>general speech and singing voice</b> (as demonstrated in the subsequent section of editing tasks),
+              <b>whistle sounds</b> (the first case of the following table), <b>humming voices</b> (the second case),
+              and even <b>instrumental musical sounds</b> (the last two cases).
+            </p>
+          </div>
+
 
           <div class="w-full overflow-x-auto">
             <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
@@ -338,17 +397,15 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/whistle_melody.wav">
                       </audio>
-                      <i>
-                        Whistle sound
-                        <br>
-                        <span class="text-gray-400 text-xs">
-                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=h5sP4JW0yDA"
-                            class="!text-gray-400 no-underline hover:!text-gray-700">the
-                            theme
-                            song of A Fistful
-                            of Dollars</a>)
-                        </span>
-                      </i>
+                      Whistle sound
+                      <br>
+                      <span class="text-gray-400 text-xs">
+                        (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=h5sP4JW0yDA"
+                          class="!text-gray-400 no-underline hover:!text-gray-700">the
+                          theme
+                          song of A Fistful
+                          of Dollars</a>)
+                      </span>
                       <br>
 
                     </td>
@@ -356,7 +413,7 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <i>Adele (British singer)</i>
+                      Adele (British singer)
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -373,21 +430,19 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/humming_alisi.wav">
                       </audio>
-                      <i>
-                        Humming sound
-                        <br>
-                        <span class="text-gray-400 text-xs">
-                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=q9bU12gXUyM"
-                            class="!text-gray-400 no-underline hover:!text-gray-700">Beethoven - Für
-                            Elise</a>)
-                        </span>
-                      </i>
+                      Humming sound
+                      <br>
+                      <span class="text-gray-400 text-xs">
+                        (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=q9bU12gXUyM"
+                          class="!text-gray-400 no-underline hover:!text-gray-700">Beethoven - Für
+                          Elise</a>)
+                      </span>
                     </td>
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/taiyizhenren.wav">
                       </audio>
-                      <i>太乙真人 (Chinese animated character)</i>
+                      太乙真人 (Chinese animated character)
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -408,20 +463,18 @@
                         <source src="data/gallery/svs_melody.wav">
                       </audio>
                       <!-- To include the midi pic -->
-                      <i>
-                        Piano sound
-                        <br>
-                        <span class="text-gray-400 text-xs">
-                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=mRKTOZmX2cE"
-                            class="!text-gray-400 no-underline hover:!text-gray-700">罗大佑 - 童年</a>)
-                        </span>
-                      </i>
+                      Piano sound (rendered from MIDI)
+                      <br>
+                      <span class="text-gray-400 text-xs">
+                        (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=mRKTOZmX2cE"
+                          class="!text-gray-400 no-underline hover:!text-gray-700">罗大佑 - 童年</a>)
+                      </span>
                     </td>
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <i>Adele (British singer)</i>
+                      Adele (British singer)
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -440,21 +493,19 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/humming_taiyang_melody_raw.wav">
                       </audio>
-                      <i>
-                        Trumpet sound
-                        <br>
-                        <span class="text-gray-400 text-xs">
-                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=IYU-BgtSwJk"
-                            class="!text-gray-400 no-underline hover:!text-gray-700">Joe Hisaishi - The Sun Also
-                            Rises</a>)
-                        </span>
-                      </i>
+                      Trumpet sound (real recordings)
+                      <br>
+                      <span class="text-gray-400 text-xs">
+                        (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=IYU-BgtSwJk"
+                          class="!text-gray-400 no-underline hover:!text-gray-700">Joe Hisaishi - The Sun Also
+                          Rises</a>)
+                      </span>
                     </td>
                     <td colspan="2">
                       <audio controls preload="auto">
                         <source src="data/gallery/sunyanzi.wav">
                       </audio>
-                      <i>孙燕姿 (Chinese singer)</i>
+                      孙燕姿 (Chinese singer)
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -465,11 +516,30 @@
 
                 </tbody>
               </table>
+
+              <p class="mt-2 text-sm text-gray-600 italic">
+                <i>
+                  <b>Note</b>: To accommodate melody control through MIDI score (a standard approach in the
+                  conventional SVS task), we can render MIDI as instrumental sound to facilitate inference (as
+                  demonstrated in the third case of the table).
+                </i>
+              </p>
             </div>
           </div>
 
-          <div class="mt-8 mb-8">
+          <div class="mt-0 mb-8 pt-10" id="editing">
             <h5>Prosody-preserved Speech and Singing Lyric Editing</h5>
+          </div>
+
+          <div class="mt-8 mb-8">
+            <p class="mt-4 text-base">
+              For editing tasks, VersaVoice not only demonstrates superior performance in synthesized audio naturalness
+              but also effectively <b>preserves the original prosody and melody</b>. For instance, in singing lyric
+              editing
+              tasks (the last four cases of the following table), VersaVoice enables selective modification of lyrics
+              while maintaining the original melodic contour
+              of the singing voice.
+            </p>
           </div>
 
           <div class="w-full overflow-x-auto">
@@ -541,6 +611,7 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
+                      Adele (British singer)
                     </td>
                     <td>
                       Never mind, <span class="bg-red-100  px-0.05">I'll</span> find <span
@@ -585,6 +656,7 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/jaychou.wav">
                       </audio>
+                      周杰伦 (Chinese singer)
                     </td>
                     <td>
                       对<span class="bg-red-100  px-0.05">这个世界</span>如果你有太多的<span
@@ -625,11 +697,43 @@
 
                 </tbody>
               </table>
+
+              <p class="mt-2 text-sm text-gray-600 italic">
+                <i>
+                  <b>Note</b>: In the editing tasks, the raw audio serves simultaneously as the prosodic source, style
+                  reference, and timbre reference during inference.
+                </i>
+              </p>
             </div>
           </div>
 
-          <div class="mt-8 mb-8">
+          <div class="mt-0 mb-8 pt-10" id="vc">
             <h5>Unified Zero-Shot VC and SVC</h5>
+          </div>
+
+          <div class="mt-8 mb-8">
+            <p class="mt-4 text-base">
+              To conduct voice conversion (VC) or singing voice
+              conversion (SVC) tasks, VersaVoice exhibits two distinctive
+              characteristics. First, VersaVoice uses a <b>unified content-style tokenizer</b> both speech and singing
+              voice domains. Second, VersaVoice supports both <b>style-preserved</b> and <b>style-converted
+                conversion</b> tasks:
+            </p>
+
+            <ul class="flex flex-col space-y-4 list-disc pl-6 text-base text-gray-700">
+              <li class="me-2">
+                When using
+                only the FM stage, i.e., without using the style reference (just as the first and the
+                third cases of the following table), VersaVoice can only convert the timbre but <i>preserve the style of
+                  the
+                  source audio</i>.
+              </li>
+              <li class="me-2">
+                When using both the AR and the FM stages, VersaVoice can convert both the timbre and
+                the
+                style of the source audio, resulting in <i>higher similarity to the target speaker(singer)</i>.
+              </li>
+            </ul>
           </div>
 
           <div class="w-full overflow-x-auto">
@@ -654,7 +758,7 @@
                         <source src="data/gallery/tts_ref.wav">
                       </audio>
                       <!-- Who would've imagined that people could really turn into water... -->
-                      <i><span class="text-blue-500">American-accented</span>, Female</i>
+                      <span class="text-blue-500">American-accented</span>, Female
                     </td>
                     <td>
                       /
@@ -663,14 +767,13 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_accent_ref.wav">
                       </audio>
-                      <i>Hindi-accented, <span class="text-red-500">Male</span></i>
+                      <span class="text-blue-500">Hindi-accented</span>, Male
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/vc_style_preserved.wav">
                       </audio>
-                      <i><span class="text-blue-500">American-accented</span>, <span
-                          class="text-red-500">Male</span></i>
+                      <span class="text-blue-500">American-accented</span>, <span class="text-red-500">Male</span>
                     </td>
                   </tr>
 
@@ -679,13 +782,13 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_accent_ref.wav">
                       </audio>
-                      <i><span class="text-blue-500">Hindi-accented</span>, Male</i>
+                      <span class="text-blue-500">Hindi-accented</span>, Male
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/vc_style_converted.wav">
                       </audio>
-                      <i><span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Male</span></i>
+                      <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Male</span>
                     </td>
                   </tr>
 
@@ -698,7 +801,7 @@
                         <source src="data/gallery/mj.wav">
                       </audio>
                       <!-- What about sunrise? What about rain? What about all the things that you said we were to gain? -->
-                      <i>Michael Jackson (American singer)</i>
+                      Michael Jackson (American singer)
                     </td>
                     <td>
                       /
@@ -707,7 +810,7 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <i>Adele (British singer)</i>
+                      Adele (British singer)
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -722,7 +825,7 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/adele_raw.wav">
                       </audio>
-                      <i>Adele (British singer)</i>
+                      Adele (British singer)
                     </td>
                     <td>
                       <audio controls preload="auto">
@@ -735,11 +838,27 @@
                 </tbody>
               </table>
             </div>
+
+            <p class="mt-2 text-sm text-gray-600 italic">
+              <i>
+                <b>Note</b>: In the VC task, the prosodic
+                source is not used during the inference. In the SVC task, we use source audio as the prosodic source.
+              </i>
+            </p>
           </div>
 
 
+          <div class="mt-0 mb-8 pt-10" id="sc">
+            <h5>Versatile Speech and Singing Style Conversions</h5>
+          </div>
+
           <div class="mt-8 mb-8">
-            <h5>Versatile Speech and Singing Style Conversion</h5>
+            <p class="mt-4 text-base">
+              VersaVoice enables versatile speech and singing style conversion tasks. Specifically, the system can
+              utilize different style references (such as different accents, emotions, singing techniques, etc.) to
+              transform the source audio's style, while preserving its original timbre by using itself as the timbre
+              reference:
+            </p>
           </div>
 
           <div class="w-full overflow-x-auto">
@@ -763,20 +882,19 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/style_accent_input.wav">
                       </audio>
-                      <!-- I'm a versatile zero-shot voice cloner. I can mimic a wide range of vocal styles from either text or waveform as input. -->
-                      <i>American-accented, <span class="text-red-500">Female</span></i>
+                      <span class="text-blue-500">American-accented</span>, <span class="text-red-500">Female</span>
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/disentangledtts_accent_ref.wav">
                       </audio>
-                      <i><span class="text-blue-500">Hindi-accented</span>, Male</i>
+                      <span class="text-blue-500">Hindi-accented</span>, Male
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_accent_gen.wav">
                       </audio>
-                      <i><span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span></i>
+                      <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span>
                     </td>
                   </tr>
 
@@ -789,13 +907,13 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/taiyizhenren.wav">
                       </audio>
-                      <i><span class="text-blue-500">Emotional</span>, Male</i>
+                      <span class="text-blue-500">Emotional</span>, Male
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_emotion_gen.wav">
                       </audio>
-                      <i><span class="text-blue-500">Emotional</span>, <span class="text-red-500">Female</span></i>
+                      <span class="text-blue-500">Emotional</span>, <span class="text-red-500">Female</span>
                     </td>
                   </tr>
 
@@ -807,20 +925,19 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/style_whisper2normal_input.wav">
                       </audio>
-                      <!-- Given the circumstances, isn't this a little unorthodox?-->
-                      <i>Whisper</i>
+                      Whisper
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_whisper2normal_ref.wav">
                       </audio>
-                      <i>Normal</i>
+                      Normal
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_whisper2normal_gen.wav">
                       </audio>
-                      <i>Normal</i>
+                      Normal
                     </td>
                   </tr>
 
@@ -832,20 +949,19 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_input.wav">
                       </audio>
-                      <!-- Girl why can't you wait, Girl why can't you wait till I fall out of love, won't -->
-                      <i>Normal, <span class="text-red-500">Male</span></i>
+                      Normal, <span class="text-red-500">Male</span>
                     </td>
                     <td rowspan="3">
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_ref.wav">
                       </audio>
-                      <i><span class="text-blue-500">Extensive vibratos and tempo rubato</span>, Female</i>
+                      <span class="text-blue-500">Extensive vibratos and tempo rubato</span>, Female
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_gen.wav">
                       </audio>
-                      <i><span class="text-blue-500">More Vibratos</span>, <span class="text-red-500">Male</span></i>
+                      <span class="text-blue-500">More Vibratos</span>, <span class="text-red-500">Male</span>
                     </td>
                   </tr>
 
@@ -854,14 +970,13 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/taozhe.wav">
                       </audio>
-                      <!-- 等待，我随时随地在等待 -->
-                      <i>陶喆 (Chinese singer)</i>
+                      陶喆 (Chinese singer)
                     </td>
                     <td>
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_taozhe_gen.wav">
                       </audio>
-                      <i><span class="text-blue-500">More Vibratos, Tempo rubato</span></i>
+                      <span class="text-blue-500">More Vibratos, Tempo rubato</span>
                     </td>
                   </tr>
 
@@ -870,13 +985,22 @@
                       <audio controls preload="auto">
                         <source src="data/gallery/style_singing_taozhe_gen2.wav">
                       </audio>
-                      <i><span class="text-blue-500">More Vibratos, Tempo rubato</span></i>
+                      <span class="text-blue-500">More Vibratos, Tempo rubato</span>
                     </td>
                   </tr>
 
                 </tbody>
               </table>
             </div>
+
+            <p class="mt-2 text-sm text-gray-600 italic">
+              <i>
+                <b>Note</b>: The source audio serves as the timbre reference in these conversion tasks. On the speech
+                domain (such as the first three cases), the prosodic
+                source is not used. On the singing domain (such as the last three case), the source
+                audio also serves as the prosodic source.
+              </i>
+            </p>
           </div>
 
 
