@@ -203,27 +203,10 @@
 
           <div class="mt-8 mb-8">
             <p class="mt-4 text-base">
-              Under the standard zero-shot text-to-speech (TTS) inference pipeline, VersaVoice exhibits two unique
-              characteristics:
+              Under the standard zero-shot text-to-speech (TTS) inference pipeline, VersaVoice extends its support beyond speech data to <i>include singing voice data as reference prompts</i>, 
+              which we define as the <b>text-to-singing</b> task. Notably, even without explicit prosodic contour control (i.e., without using a prosodic source), the synthesized output could follow and extend 
+              the reference's melodic pattern, demonstrating melody imitation or continuation.
             </p>
-
-            <ul class="flex flex-col space-y-4 list-disc pl-6 text-base text-gray-700">
-              <li class="me-2">
-                Leveraging our proposed <i>timbre-disentangled content-style tokenizer</i>, VersaVoice enables
-                <b>independent
-                  control over style and timbre</b> through the
-                utilization of different style and timbre references (as demonstrated in the second and fourth
-                cases of the following table).
-              </li>
-              <li class="me-2">
-                VersaVoice provides supports for <i>using singing voice data as reference prompts</i>, which we define
-                as the
-                <b>text-to-singing</b>
-                task. Notably, even without prosodic contour control conditions (i.e., without using an explicit
-                prosodic source), the synthesized output effectively follows and extends the melodic pattern of the
-                reference, functioning as melody imitation or continuation.
-              </li>
-            </ul>
           </div>
 
           <div class="w-full overflow-x-auto">
