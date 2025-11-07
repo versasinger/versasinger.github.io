@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>VersaVoice</title>
+  <title>Vevo2</title>
   <script src="./static/tailwind.js"></script>
   <script src="./static/vue.global.js"></script>
   <script src="./static/flowbite.min.js"></script>
@@ -141,7 +141,7 @@
     <div class="p-5 md:p-0 mt-16 max-w-screen-xl mx-auto">
       <div class="p-6" id="home">
         <div class="mt-8 mb-8">
-          <h1>Bridging Controllable Speech and Singing Voice Generation via Unified Prosody Learning</h1>
+          <h1>Vevo2: A Unified and Controllable Framework for Speech and Singing Voice Generation</h1>
         </div>
 
 
@@ -149,32 +149,15 @@
           <div class="max-w-[900px] mx-auto mt-8 mb-16">
             <h2>Abstract</h2>
             <p class="text-p">
-              Controllable human voice generation, particularly for expressive domains like singing,
-              remains a significant challenge. This paper introduces VersaVoice, a unified framework for
-              controllable speech and singing voice generation. To tackle issues like the scarcity of
-              annotated singing data and to enable flexible controllability, VersaVoice introduces two
-              audio tokenizers: (1) a music-notation-free prosody tokenizer that captures prosody and
-              melody from speech, singing, and even instrumental sounds, and (2) a low-frame-rate
-              content-style tokenizer that encodes linguistic content, prosody, and style in human voice
-              while achieving timbre disentanglement. VersaVoice consists of an auto-regressive (AR)
-              content-style modeling stage, which aims to enable controllability over text, prosody, and
-              style, as well as a flow-matching (FM) acoustic modeling stage that allows for timbre control.
-              Particularly, during pre-training of the AR model, we propose both explicit and implicit
-              prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance
-              the AR model's ability to follow text and prosody, we design a multi-objective post-training
-              task that integrates both intelligibility and prosody similarity alignment. Experimental
-              results show that unified modeling in VersaVoice brings mutual benefits to both speech and
-              singing voice generation. Additionally, VersaVoice's effectiveness across a wide range of
-              synthesis, conversion, and editing tasks for both speech and singing further demonstrates
-              its strong generalization ability and versatility.
+              Controllable human voice generation, particularly for expressive domains like singing, remains a significant challenge. This paper introduces Vevo2, a unified framework for controllable speech and singing voice generation. To tackle issues like the scarcity of annotated singing data and to enable flexible controllability, Vevo2 introduces two audio tokenizers: (1) a unified music-notation-free prosody tokenizer that captures prosody and melody from speech, singing, and even instrumental sounds, and (2) a unified content-style tokenizer that encodes linguistic content, prosody, and style for both speech and singing, while enabling timbre disentanglement. Vevo2 consists of an auto-regressive content-style modeling stage, which aims to enable controllability over text, prosody, and style, as well as a flow-matching acoustic modeling stage that allows for timbre control. Particularly, during the speech-singing joint training of the AR model, we propose both explicit and implicit prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance the Vevo2’s ability to follow text and prosody, we design a multi-objective post-training task that integrates both intelligibility and prosody similarity alignment. Experimental results show that the unified modeling in Vevo2 brings mutual benefits to both speech and singing voice generation. Additionally, Vevo2’s effectiveness across a wide range of synthesis, conversion, and editing tasks for both speech and singing further demonstrates its strong generalization ability and versatility.
 
             </p>
           </div>
 
           <div class="mt-8 mb-8" id="gallery">
-            <h4>What can VersaVoice do?</h4>
+            <h4>What can Vevo2 do?</h4>
             <p>
-              <b><i>VersaVoice</i></b> is a <u>versa</u>tile and controllable <u>voice</u> generation framework designed
+              <b><i>Vevo2</i></b> is a <u>versa</u>tile and controllable <u>voice</u> generation framework designed
               to
               unify speech and singing voice. It
               consists of an auto-regressive (AR) content-style modeling stage, which aims to enable
@@ -194,7 +177,7 @@
           </div>
 
           <div class="mt-8">
-            We will showcase VersaVoice's capabilities through the following examples.
+            We will showcase Vevo2's capabilities through the following examples.
           </div>
 
           <div class="mt-0 mb-8 pt-10" id="tts">
@@ -203,7 +186,7 @@
 
           <div class="mt-8 mb-8">
             <p class="mt-4 text-base">
-              Under the standard zero-shot text-to-speech (TTS) inference pipeline, VersaVoice extends its support
+              Under the standard zero-shot text-to-speech (TTS) inference pipeline, Vevo2 extends its support
               beyond speech data to <i>include singing voice data as reference prompts</i>,
               which we define as the <b>text-to-singing</b> task. Notably, even without explicit prosodic contour
               control (i.e., without using a prosodic source), the synthesized output could follow and extend
@@ -347,7 +330,7 @@
 
           <div class="mt-8 mb-8">
             <p class="mt-4 text-base">
-              VersaVoice provides supports for <i>using an explicit prosodic source to control the prosody/melody of the
+              Vevo2 provides supports for <i>using an explicit prosodic source to control the prosody/melody of the
                 synthesized output</i>. Particularly, it accommodates various forms of prosodic sources, including
               <b>general speech and singing voice</b> (as demonstrated in the subsequent section of editing tasks),
               <b>whistle sounds</b> (the first case of the following table), <b>humming voices</b> (the second case),
@@ -518,10 +501,10 @@
 
           <div class="mt-8 mb-8">
             <p class="mt-4 text-base">
-              For editing tasks, VersaVoice not only demonstrates superior performance in synthesized audio naturalness
+              For editing tasks, Vevo2 not only demonstrates superior performance in synthesized audio naturalness
               but also effectively <b>preserves the original prosody and melody</b>. For instance, in singing lyric
               editing
-              tasks (the last four cases of the following table), VersaVoice enables selective modification of lyrics
+              tasks (the last four cases of the following table), Vevo2 enables selective modification of lyrics
               while maintaining the original melodic contour
               of the singing voice.
             </p>
@@ -699,9 +682,9 @@
           <div class="mt-8 mb-8">
             <p class="mt-4 text-base">
               To conduct voice conversion (VC) or singing voice
-              conversion (SVC) tasks, VersaVoice exhibits two distinctive
-              characteristics. First, VersaVoice uses a <b>unified content-style tokenizer</b> both speech and singing
-              voice domains. Second, VersaVoice supports both <b>style-preserved</b> and <b>style-converted
+              conversion (SVC) tasks, Vevo2 exhibits two distinctive
+              characteristics. First, Vevo2 uses a <b>unified content-style tokenizer</b> both speech and singing
+              voice domains. Second, Vevo2 supports both <b>style-preserved</b> and <b>style-converted
                 conversion</b> tasks:
             </p>
 
@@ -709,12 +692,12 @@
               <li class="me-2">
                 When using
                 only the FM stage, i.e., without using the style reference (just as the first and the
-                third cases of the following table), VersaVoice can only convert the timbre but <i>preserve the style of
+                third cases of the following table), Vevo2 can only convert the timbre but <i>preserve the style of
                   the
                   source audio</i>.
               </li>
               <li class="me-2">
-                When using both the AR and the FM stages, VersaVoice can convert both the timbre and
+                When using both the AR and the FM stages, Vevo2 can convert both the timbre and
                 the
                 style of the source audio, resulting in <i>higher similarity to the target speaker(singer)</i>.
               </li>
@@ -841,7 +824,7 @@
 
           <div class="mt-8 mb-8">
             <p class="mt-4 text-base">
-              VersaVoice enables versatile speech and singing style conversion tasks. Specifically, the system can
+              Vevo2 enables versatile speech and singing style conversion tasks. Specifically, the system can
               utilize different style references (such as different accents, emotions, singing techniques, etc.) to
               transform the source audio's style, while preserving its original timbre by using itself as the timbre
               reference:
