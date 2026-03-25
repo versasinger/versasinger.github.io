@@ -130,6 +130,22 @@
             <li>
               <a href="#sc" class="list-select"><b>Style Conversion</b></a>
             </li>
+            <li>
+              <a href="https://github.com/open-mmlab/Amphion/tree/main/models/svc/vevo2" class="list-select"
+                target="_blank">
+                <svg class="w-6 h-6 text-gray-900 hover:text-blue-700" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd"
+                    d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://huggingface.co/RMSnow/Vevo2" class="list-select" target="_blank">
+                <img class="h-6 w-6" src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" />
+              </a>
+            </li>
 
           </ul>
         </div>
@@ -144,840 +160,895 @@
           <h1>Vevo2: A Unified and Controllable Framework for Speech and Singing Voice Generation</h1>
         </div>
 
+        <div class="flex gap-2 justify-center flex-wrap">
+          <a href="https://arxiv.org/abs/2508.16332" target="_blank">
+            <img src="https://img.shields.io/badge/arXiv-Paper-red.svg">
+          </a>
+          <a href="https://huggingface.co/RMSnow/Vevo2" target="_blank">
+            <img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Model-yellow">
+          </a>
+          <a href="https://github.com/open-mmlab/Amphion/tree/main/models/svc/vevo2" target="_blank">
+            <img src="https://img.shields.io/badge/GitHub-Repo-blue">
+          </a>
+        </div>
 
         <div class="mx-auto mt-8 mb-16">
-          <div class="max-w-[900px] mx-auto mt-8 mb-16">
-            <h2>Abstract</h2>
-            <p class="text-p">
-              Controllable human voice generation, particularly for expressive domains like singing, remains a significant challenge. This paper introduces Vevo2, a unified framework for controllable speech and singing voice generation. To tackle issues like the scarcity of annotated singing data and to enable flexible controllability, Vevo2 introduces two audio tokenizers: (1) a unified music-notation-free prosody tokenizer that captures prosody and melody from speech, singing, and even instrumental sounds, and (2) a unified content-style tokenizer that encodes linguistic content, prosody, and style for both speech and singing, while enabling timbre disentanglement. Vevo2 consists of an auto-regressive content-style modeling stage, which aims to enable controllability over text, prosody, and style, as well as a flow-matching acoustic modeling stage that allows for timbre control. Particularly, during the speech-singing joint training of the AR model, we propose both explicit and implicit prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance the Vevo2’s ability to follow text and prosody, we design a multi-objective post-training task that integrates both intelligibility and prosody similarity alignment. Experimental results show that the unified modeling in Vevo2 brings mutual benefits to both speech and singing voice generation. Additionally, Vevo2’s effectiveness across a wide range of synthesis, conversion, and editing tasks for both speech and singing further demonstrates its strong generalization ability and versatility.
-
-            </p>
+          <div class="max-w-[900px] mx-auto text-center pb-10 flex flex-col gap-3">
+            <div class="text-sm">
+              <span class="author"><a href="https://www.zhangxueyao.com/">Xueyao Zhang</a><sup>1</sup></span>
+              <span class="author">Junan Zhang<sup>1</sup></span>
+              <span class="author">Yuancheng Wang<sup>1</sup></span>
+              <span class="author">Chaoren Wang<sup>1</sup></span>
+              <span class="author">Yuanzhe Chen<sup>2</sup></span>
+              <br>
+              <span class="author">Dongya Jia<sup>2</sup></span>
+              <span class="author">Zhuo Chen<sup>2</sup></span>
+              <span class="author">Zhizheng Wu<sup>1</sup></span>
+            </div>
+            <div class="text-sm">
+              <span class="affiliation"><sup>1</sup>
+                The Chinese University of Hong Kong, Shenzhen
+              </span>
+              <span class="affiliation"><sup>2</sup>
+                ByteDance Seed
+              </span>
+            </div>
           </div>
 
-          <div class="mt-8 mb-8" id="gallery">
-            <h4>What can Vevo2 do?</h4>
-            <p>
-              <b><i>Vevo2</i></b> is a <u>versa</u>tile and controllable <u>voice</u> generation framework designed
-              to
-              unify speech and singing voice. It
-              consists of an auto-regressive (AR) content-style modeling stage, which aims to enable
-              controllability over text, prosody, and style, as well as a flow-matching (FM) acoustic modeling stage
-              that
-              allows for timbre control. It is able to support versatile synthesis, conversion, and editing tasks
-              through a unified
-              inference pipeline.
-            </p>
 
-            <div class="flex mx-auto justify-center max-w-screen-lg py-8">
-              <img src="static/pipeline.png"></img>
+          <div class="mx-auto mt-8 mb-16">
+            <div class="max-w-[900px] mx-auto mt-8 mb-16">
+              <h2>Abstract</h2>
+              <p class="text-p">
+                Controllable human voice generation, particularly for expressive domains like singing, remains a
+                significant challenge. This paper introduces Vevo2, a unified framework for controllable speech and
+                singing voice generation. To tackle issues like the scarcity of annotated singing data and to enable
+                flexible controllability, Vevo2 introduces two audio tokenizers: (1) a unified music-notation-free
+                prosody
+                tokenizer that captures prosody and melody from speech, singing, and even instrumental sounds, and (2) a
+                unified content-style tokenizer that encodes linguistic content, prosody, and style for both speech and
+                singing, while enabling timbre disentanglement. Vevo2 consists of an auto-regressive content-style
+                modeling stage, which aims to enable controllability over text, prosody, and style, as well as a
+                flow-matching acoustic modeling stage that allows for timbre control. Particularly, during the
+                speech-singing joint training of the AR model, we propose both explicit and implicit prosody learning
+                strategies to bridge speech and singing voice. Moreover, to further enhance the Vevo2’s ability to
+                follow
+                text and prosody, we design a multi-objective post-training task that integrates both intelligibility
+                and
+                prosody similarity alignment. Experimental results show that the unified modeling in Vevo2 brings mutual
+                benefits to both speech and singing voice generation. Additionally, Vevo2’s effectiveness across a wide
+                range of synthesis, conversion, and editing tasks for both speech and singing further demonstrates its
+                strong generalization ability and versatility.
+
+              </p>
             </div>
-            <!-- <div class="flex mx-auto justify-center max-w-screen-lg py-8">
+
+            <div class="mt-8 mb-8" id="gallery">
+              <h4>What can Vevo2 do?</h4>
+              <p>
+                <b><i>Vevo2</i></b> is a <u>versa</u>tile and controllable <u>voice</u> generation framework designed
+                to
+                unify speech and singing voice. It
+                consists of an auto-regressive (AR) content-style modeling stage, which aims to enable
+                controllability over text, prosody, and style, as well as a flow-matching (FM) acoustic modeling stage
+                that
+                allows for timbre control. It is able to support versatile synthesis, conversion, and editing tasks
+                through a unified
+                inference pipeline.
+              </p>
+
+              <div class="flex mx-auto justify-center max-w-screen-lg py-8">
+                <img src="static/pipeline.png"></img>
+              </div>
+              <!-- <div class="flex mx-auto justify-center max-w-screen-lg py-8">
               <img src="static/supported_tasks.png"></img>
             </div> -->
-          </div>
+            </div>
 
-          <div class="mt-8">
-            We will showcase Vevo2's capabilities through the following examples.
-          </div>
+            <div class="mt-8">
+              We will showcase Vevo2's capabilities through the following examples.
+            </div>
 
-          <div class="mt-0 mb-8 pt-10" id="tts">
-            <h5>Extend Zero-Shot TTS to Singing Voice Domain</h5>
-          </div>
+            <div class="mt-0 mb-8 pt-10" id="tts">
+              <h5>Extend Zero-Shot TTS to Singing Voice Domain</h5>
+            </div>
 
-          <div class="mt-8 mb-8">
-            <p class="mt-4 text-base">
-              Under the standard zero-shot text-to-speech (TTS) inference pipeline, Vevo2 extends its support
-              beyond speech data to <i>include singing voice data as reference prompts</i>,
-              which we define as the <b>text-to-singing</b> task. Notably, even without explicit prosodic contour
-              control (i.e., without using a prosodic source), the synthesized output could follow and extend
-              the reference's melodic pattern, demonstrating melody imitation or continuation.
-            </p>
-          </div>
+            <div class="mt-8 mb-8">
+              <p class="mt-4 text-base">
+                Under the standard zero-shot text-to-speech (TTS) inference pipeline, Vevo2 extends its support
+                beyond speech data to <i>include singing voice data as reference prompts</i>,
+                which we define as the <b>text-to-singing</b> task. Notably, even without explicit prosodic contour
+                control (i.e., without using a prosodic source), the synthesized output could follow and extend
+                the reference's melodic pattern, demonstrating melody imitation or continuation.
+              </p>
+            </div>
 
-          <div class="w-full overflow-x-auto">
-            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
-              <table class="table-gallery">
-                <thead>
-                  <tr>
-                    <th style="text-align: center; width: 9%;">Task</th>
-                    <th style="text-align: center; width: 22%;">Target Text</th>
-                    <!-- <th style="text-align: center; width: 10%;">Prosodic Source</th> -->
-                    <th style="text-align: center; width: 23%;">Style Reference</th>
-                    <th style="text-align: center; width: 23%;">Timbre Reference</th>
-                    <th style="text-align: center; width: 23%;">Results</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Text to Speech</b>
-                    </td>
-                    <td>
-                      In just a heartbeat, I can traverse oceans, cross mountains, and explore cities that I've only
-                      dreamed of.
-                    </td>
-                    <!-- <td rowspan="4">
+            <div class="w-full overflow-x-auto">
+              <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+                <table class="table-gallery">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center; width: 9%;">Task</th>
+                      <th style="text-align: center; width: 22%;">Target Text</th>
+                      <!-- <th style="text-align: center; width: 10%;">Prosodic Source</th> -->
+                      <th style="text-align: center; width: 23%;">Style Reference</th>
+                      <th style="text-align: center; width: 23%;">Timbre Reference</th>
+                      <th style="text-align: center; width: 23%;">Results</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="2">
+                        <b>Text to Speech</b>
+                      </td>
+                      <td>
+                        In just a heartbeat, I can traverse oceans, cross mountains, and explore cities that I've only
+                        dreamed of.
+                      </td>
+                      <!-- <td rowspan="4">
                       /
                     </td> -->
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/tts_ref.wav">
-                      </audio>
-                      <!-- Who would've imagined that people could really turn into water... -->
-                      <!-- <i><span class="text-blue-500">High-pitched</span>, -->
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/tts_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                      <td colspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/tts_ref.wav">
+                        </audio>
+                        <!-- Who would've imagined that people could really turn into water... -->
+                        <!-- <i><span class="text-blue-500">High-pitched</span>, -->
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/tts_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      I've been a silent spectator, watching species evolve, empires rise and fall. But always remember,
-                      I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the
-                      consequences.
-                    </td>
+                    <tr>
+                      <td>
+                        I've been a silent spectator, watching species evolve, empires rise and fall. But always
+                        remember,
+                        I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the
+                        consequences.
+                      </td>
 
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_accent_ref.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, Male
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_timbre_ref.wav">
-                      </audio>
-                      Mandarin, <span class="text-red-500">Female</span>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_gen.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span>
-                    </td>
-                  </tr>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/disentangledtts_accent_ref.wav">
+                        </audio>
+                        <span class="text-blue-500">Hindi-accented</span>, Male
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/disentangledtts_timbre_ref.wav">
+                        </audio>
+                        Mandarin, <span class="text-red-500">Female</span>
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/disentangledtts_gen.wav">
+                        </audio>
+                        <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Text to Singing</b>
-                    </td>
-                    <td>
-                      Don't forget me, I'm calling your name. I remember you said, love's not always the same.
-                    </td>
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="2">
+                        <b>Text to Singing</b>
+                      </td>
+                      <td>
+                        Don't forget me, I'm calling your name. I remember you said, love's not always the same.
+                      </td>
 
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/adele_raw.wav">
-                      </audio>
-                      Adele (British singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/ttsing_adele_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                      <td colspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/adele_raw.wav">
+                        </audio>
+                        Adele (British singer)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/ttsing_adele_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我
-                    </td>
+                    <tr>
+                      <td>
+                        我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我
+                      </td>
 
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/jaychou.wav">
-                      </audio>
-                      周杰伦 (Chinese singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/taiyizhenren.wav">
-                      </audio>
-                      太乙真人 (Chinese animated character)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/ttsing_gen.wav">
-                      </audio>
-                      <br>
-                      <i>When feeding this generated result into an external singing-to-song system:</i>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/ttsing_sing2song.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/jaychou.wav">
+                        </audio>
+                        周杰伦 (Chinese singer)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/taiyizhenren.wav">
+                        </audio>
+                        太乙真人 (Chinese animated character)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/ttsing_gen.wav">
+                        </audio>
+                        <br>
+                        <i>When feeding this generated result into an external singing-to-song system:</i>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/ttsing_sing2song.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
 
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
 
-              <p class="mt-2 text-sm text-gray-600 italic">
-                <i>
-                  <b>Note</b>: The prosodic
-                  source is not used during the inference.
-                </i>
+                <p class="mt-2 text-sm text-gray-600 italic">
+                  <i>
+                    <b>Note</b>: The prosodic
+                    source is not used during the inference.
+                  </i>
+                </p>
+              </div>
+            </div>
+
+
+            <div class="mt-0 mb-8 pt-10" id="melody">
+              <h5>Versatile Melody Controls for Singing Voice Generation</h5>
+            </div>
+
+            <div class="mt-8 mb-8">
+              <p class="mt-4 text-base">
+                Vevo2 provides supports for <i>using an explicit prosodic source to control the prosody/melody of the
+                  synthesized output</i>. Particularly, it accommodates various forms of prosodic sources, including
+                <b>general speech and singing voice</b> (as demonstrated in the subsequent section of editing tasks),
+                <b>whistle sounds</b> (the first case of the following table), <b>humming voices</b> (the second case),
+                and even <b>instrumental musical sounds</b> (the last two cases).
               </p>
             </div>
-          </div>
 
 
-          <div class="mt-0 mb-8 pt-10" id="melody">
-            <h5>Versatile Melody Controls for Singing Voice Generation</h5>
-          </div>
+            <div class="w-full overflow-x-auto">
+              <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+                <table class="table-gallery">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center; width: 9%;">Task</th>
+                      <th style="text-align: center; width: 22%;">Target Text</th>
+                      <th style="text-align: center; width: 24%;">Prosodic Source</th>
+                      <th style="text-align: center; width: 12%;">Style Reference</th>
+                      <th style="text-align: center; width: 12%;">Timbre Reference</th>
+                      <th style="text-align: center; width: 21%;">Results</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
-          <div class="mt-8 mb-8">
-            <p class="mt-4 text-base">
-              Vevo2 provides supports for <i>using an explicit prosodic source to control the prosody/melody of the
-                synthesized output</i>. Particularly, it accommodates various forms of prosodic sources, including
-              <b>general speech and singing voice</b> (as demonstrated in the subsequent section of editing tasks),
-              <b>whistle sounds</b> (the first case of the following table), <b>humming voices</b> (the second case),
-              and even <b>instrumental musical sounds</b> (the last two cases).
-            </p>
-          </div>
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="2">
+                        <b>Humming to Singing</b>
+                      </td>
+                      <td>
+                        Moonlight dancing through the starry sky. Snowflakes falling in the winter night.
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/whistle_melody.wav">
+                        </audio>
+                        Whistle sound
+                        <br>
+                        <span class="text-gray-400 text-xs">
+                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=h5sP4JW0yDA"
+                            class="!text-gray-400 no-underline hover:!text-gray-700">the
+                            theme
+                            song of A Fistful
+                            of Dollars</a>)
+                        </span>
+                        <br>
 
+                      </td>
+                      <td colspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/adele_raw.wav">
+                        </audio>
+                        Adele (British singer)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/whistle_adele_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-          <div class="w-full overflow-x-auto">
-            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
-              <table class="table-gallery">
-                <thead>
-                  <tr>
-                    <th style="text-align: center; width: 9%;">Task</th>
-                    <th style="text-align: center; width: 22%;">Target Text</th>
-                    <th style="text-align: center; width: 24%;">Prosodic Source</th>
-                    <th style="text-align: center; width: 12%;">Style Reference</th>
-                    <th style="text-align: center; width: 12%;">Timbre Reference</th>
-                    <th style="text-align: center; width: 21%;">Results</th>
-                  </tr>
-                </thead>
-                <tbody>
+                    <tr>
+                      <td>
+                        你是我的小呀小苹果，怎么爱，不嫌多
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/humming_alisi.wav">
+                        </audio>
+                        Humming sound
+                        <br>
+                        <span class="text-gray-400 text-xs">
+                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=q9bU12gXUyM"
+                            class="!text-gray-400 no-underline hover:!text-gray-700">Beethoven - Für
+                            Elise</a>)
+                        </span>
+                      </td>
+                      <td colspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/taiyizhenren.wav">
+                        </audio>
+                        太乙真人 (Chinese animated character)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/humming_alisi_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Humming to Singing</b>
-                    </td>
-                    <td>
-                      Moonlight dancing through the starry sky. Snowflakes falling in the winter night.
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/whistle_melody.wav">
-                      </audio>
-                      Whistle sound
-                      <br>
-                      <span class="text-gray-400 text-xs">
-                        (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=h5sP4JW0yDA"
-                          class="!text-gray-400 no-underline hover:!text-gray-700">the
-                          theme
-                          song of A Fistful
-                          of Dollars</a>)
-                      </span>
-                      <br>
-
-                    </td>
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/adele_raw.wav">
-                      </audio>
-                      Adele (British singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/whistle_adele_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      你是我的小呀小苹果，怎么爱，不嫌多
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/humming_alisi.wav">
-                      </audio>
-                      Humming sound
-                      <br>
-                      <span class="text-gray-400 text-xs">
-                        (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=q9bU12gXUyM"
-                          class="!text-gray-400 no-underline hover:!text-gray-700">Beethoven - Für
-                          Elise</a>)
-                      </span>
-                    </td>
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/taiyizhenren.wav">
-                      </audio>
-                      太乙真人 (Chinese animated character)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/humming_alisi_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Instrument to Singing</b>
-                    </td>
-                    <td>
-                      It's always just me facing the sky, my mind roaming freely like the clouds.
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/svs_melody.wav">
-                      </audio>
-                      <!-- To include the midi pic -->
-                      Piano sound (rendered from MIDI)
-                      <br>
-                      <span class="text-gray-400 text-xs">
-                        (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=mRKTOZmX2cE"
-                          class="!text-gray-400 no-underline hover:!text-gray-700">罗大佑 - 童年</a>)
-                      </span>
-                    </td>
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/adele_raw.wav">
-                      </audio>
-                      Adele (British singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/svs_adele_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="2">
+                        <b>Instrument to Singing</b>
+                      </td>
+                      <td>
+                        It's always just me facing the sky, my mind roaming freely like the clouds.
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/svs_melody.wav">
+                        </audio>
+                        <!-- To include the midi pic -->
+                        Piano sound (rendered from MIDI)
+                        <br>
+                        <span class="text-gray-400 text-xs">
+                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=mRKTOZmX2cE"
+                            class="!text-gray-400 no-underline hover:!text-gray-700">罗大佑 - 童年</a>)
+                        </span>
+                      </td>
+                      <td colspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/adele_raw.wav">
+                        </audio>
+                        Adele (British singer)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/svs_adele_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
 
-                  <tr>
+                    <tr>
 
-                    <td>
-                      朝霞染红天际，暖阳依旧，新希望
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/humming_taiyang_melody_raw.wav">
-                      </audio>
-                      Trumpet sound (real recordings)
-                      <br>
-                      <span class="text-gray-400 text-xs">
-                        (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=IYU-BgtSwJk"
-                          class="!text-gray-400 no-underline hover:!text-gray-700">Joe Hisaishi - The Sun Also
-                          Rises</a>)
-                      </span>
-                    </td>
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/sunyanzi.wav">
-                      </audio>
-                      孙燕姿 (Chinese singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/humming_taiyang_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                      <td>
+                        朝霞染红天际，暖阳依旧，新希望
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/humming_taiyang_melody_raw.wav">
+                        </audio>
+                        Trumpet sound (real recordings)
+                        <br>
+                        <span class="text-gray-400 text-xs">
+                          (<b>Melody</b>: <a href="https://www.youtube.com/watch?v=IYU-BgtSwJk"
+                            class="!text-gray-400 no-underline hover:!text-gray-700">Joe Hisaishi - The Sun Also
+                            Rises</a>)
+                        </span>
+                      </td>
+                      <td colspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/sunyanzi.wav">
+                        </audio>
+                        孙燕姿 (Chinese singer)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/humming_taiyang_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
 
-              <p class="mt-2 text-sm text-gray-600 italic">
-                <i>
-                  <b>Note</b>: To accommodate melody control through MIDI score (a standard approach in the
-                  conventional SVS task), we can render MIDI as instrumental sound to facilitate inference (as
-                  demonstrated in the third case of the table).
-                </i>
+                <p class="mt-2 text-sm text-gray-600 italic">
+                  <i>
+                    <b>Note</b>: To accommodate melody control through MIDI score (a standard approach in the
+                    conventional SVS task), we can render MIDI as instrumental sound to facilitate inference (as
+                    demonstrated in the third case of the table).
+                  </i>
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-0 mb-8 pt-10" id="editing">
+              <h5>Prosody-preserved Speech and Singing Lyric Editing</h5>
+            </div>
+
+            <div class="mt-8 mb-8">
+              <p class="mt-4 text-base">
+                For editing tasks, Vevo2 not only demonstrates superior performance in synthesized audio naturalness
+                but also effectively <b>preserves the original prosody and melody</b>. For instance, in singing lyric
+                editing
+                tasks (the last four cases of the following table), Vevo2 enables selective modification of lyrics
+                while maintaining the original melodic contour
+                of the singing voice.
               </p>
             </div>
-          </div>
 
-          <div class="mt-0 mb-8 pt-10" id="editing">
-            <h5>Prosody-preserved Speech and Singing Lyric Editing</h5>
-          </div>
+            <div class="w-full overflow-x-auto">
+              <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+                <table class="table-gallery">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center; width: 14%;">Task</th>
+                      <th style="text-align: center; width: 21%;">
+                        Raw Audio
+                      </th>
+                      <th style="text-align: center; width: 22%;">Raw Text</th>
+                      <th style="text-align: center; width: 22%;">Target Text</th>
+                      <th style="text-align: center; width: 21%;">Results</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="2">
+                        <b>Speech Editing</b>
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/tts_ref.wav">
+                        </audio>
+                      </td>
+                      <td>
+                        Who would've imagined that people could <span class="bg-red-100  px-0.05">really</span>
+                        turn
+                        into <span class="bg-red-100  px-0.05">water</span>...
+                      </td>
+                      <td>
+                        Who would've imagined that people could <span class="bg-blue-100  px-0.05">truly</span>
+                        turn into <span class="bg-blue-100  px-0.05">fire</span>...
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/editing_child_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-          <div class="mt-8 mb-8">
-            <p class="mt-4 text-base">
-              For editing tasks, Vevo2 not only demonstrates superior performance in synthesized audio naturalness
-              but also effectively <b>preserves the original prosody and melody</b>. For instance, in singing lyric
-              editing
-              tasks (the last four cases of the following table), Vevo2 enables selective modification of lyrics
-              while maintaining the original melodic contour
-              of the singing voice.
-            </p>
-          </div>
+                    <tr>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/houyi_raw.wav">
+                        </audio>
+                      </td>
+                      <td>
+                        没什么是<span class="bg-red-100  px-0.05">一</span>发利箭<span
+                          class="bg-red-100  px-0.05">不能</span>解决的。如果有，那就<span class="bg-red-100  px-0.05">两发</span>。
+                      </td>
+                      <td>
+                        没什么是<span class="bg-blue-100  px-0.05">两</span>发利箭<span
+                          class="bg-blue-100  px-0.05">可以</span>解决的。如果有，那就<span class="bg-blue-100  px-0.05">五发</span>。
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/editing_houyi_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-          <div class="w-full overflow-x-auto">
-            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
-              <table class="table-gallery">
-                <thead>
-                  <tr>
-                    <th style="text-align: center; width: 14%;">Task</th>
-                    <th style="text-align: center; width: 21%;">
-                      Raw Audio
-                    </th>
-                    <th style="text-align: center; width: 22%;">Raw Text</th>
-                    <th style="text-align: center; width: 22%;">Target Text</th>
-                    <th style="text-align: center; width: 21%;">Results</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Speech Editing</b>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/tts_ref.wav">
-                      </audio>
-                    </td>
-                    <td>
-                      Who would've imagined that people could <span class="bg-red-100  px-0.05">really</span>
-                      turn
-                      into <span class="bg-red-100  px-0.05">water</span>...
-                    </td>
-                    <td>
-                      Who would've imagined that people could <span class="bg-blue-100  px-0.05">truly</span>
-                      turn into <span class="bg-blue-100  px-0.05">fire</span>...
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/editing_child_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="4">
+                        <b>Singing Lyric Editing</b>
+                      </td>
+                      <td rowspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/adele_raw.wav">
+                        </audio>
+                        Adele (British singer)
+                      </td>
+                      <td>
+                        Never mind, <span class="bg-red-100  px-0.05">I'll</span> find <span
+                          class="bg-red-100  px-0.05">someone</span> like <span class="bg-red-100  px-0.05">you</span>.
+                        <span class="bg-red-100  px-0.05">I
+                        </span>wish nothing but
+                      </td>
+                      <td>
+                        Never mind, <span class="bg-blue-100  px-0.05">you'll</span> find <span
+                          class="bg-blue-100  px-0.05">anyone</span> like <span class="bg-blue-100  px-0.05">me</span>.
+                        <span class="bg-blue-100  px-0.05">You
+                        </span>wish nothing but
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/editing_singing_adele_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/houyi_raw.wav">
-                      </audio>
-                    </td>
-                    <td>
-                      没什么是<span class="bg-red-100  px-0.05">一</span>发利箭<span
-                        class="bg-red-100  px-0.05">不能</span>解决的。如果有，那就<span class="bg-red-100  px-0.05">两发</span>。
-                    </td>
-                    <td>
-                      没什么是<span class="bg-blue-100  px-0.05">两</span>发利箭<span
-                        class="bg-blue-100  px-0.05">可以</span>解决的。如果有，那就<span class="bg-blue-100  px-0.05">五发</span>。
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/editing_houyi_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <span class="bg-red-100  px-0.05">Never mind</span>, I'll</span> <span
+                          class="bg-red-100  px-0.05">find someone like you</span>.
+                        I wish
+                        <span class="bg-red-100  px-0.05">nothing but</span>
+                      </td>
+                      <td>
+                        <span class="bg-blue-100  px-0.05">Alright</span>, I'll <span class="bg-blue-100  px-0.05">turn
+                          over a new page</span>. I wish
+                        <span class="bg-blue-100  px-0.05">for calm</span>
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/editing_singing_adele_gen2.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="4">
-                      <b>Singing Lyric Editing</b>
-                    </td>
-                    <td rowspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/adele_raw.wav">
-                      </audio>
-                      Adele (British singer)
-                    </td>
-                    <td>
-                      Never mind, <span class="bg-red-100  px-0.05">I'll</span> find <span
-                        class="bg-red-100  px-0.05">someone</span> like <span class="bg-red-100  px-0.05">you</span>.
-                      <span class="bg-red-100  px-0.05">I
-                      </span>wish nothing but
-                    </td>
-                    <td>
-                      Never mind, <span class="bg-blue-100  px-0.05">you'll</span> find <span
-                        class="bg-blue-100  px-0.05">anyone</span> like <span class="bg-blue-100  px-0.05">me</span>.
-                      <span class="bg-blue-100  px-0.05">You
-                      </span>wish nothing but
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/editing_singing_adele_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td rowspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/jaychou.wav">
+                        </audio>
+                        周杰伦 (Chinese singer)
+                      </td>
+                      <td>
+                        对<span class="bg-red-100  px-0.05">这个世界</span>如果你有太多的<span
+                          class="bg-red-100  px-0.05">抱怨</span>，跌倒了就不该<span
+                          class="bg-red-100  px-0.05">继续往前走</span>，为什么，人要这么的<span class="bg-red-100  px-0.05">脆弱</span>堕
+                      </td>
+                      <td>
+                        对<span class="bg-blue-100  px-0.05">你的人生</span>如果你有太多的<span
+                          class="bg-blue-100  px-0.05">期盼</span>，跌倒了就不该<span
+                          class="bg-blue-100  px-0.05">低头认输</span>，为什么，人要这么的<span
+                          class="bg-blue-100  px-0.05">彷徨</span>堕
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/editing_singing_jaychou_gen.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      <span class="bg-red-100  px-0.05">Never mind</span>, I'll</span> <span
-                        class="bg-red-100  px-0.05">find someone like you</span>.
-                      I wish
-                      <span class="bg-red-100  px-0.05">nothing but</span>
-                    </td>
-                    <td>
-                      <span class="bg-blue-100  px-0.05">Alright</span>, I'll <span class="bg-blue-100  px-0.05">turn
-                        over a new page</span>. I wish
-                      <span class="bg-blue-100  px-0.05">for calm</span>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/editing_singing_adele_gen2.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td>
+                        对<span class="bg-red-100  px-0.05">这个世界</span>如果<span
+                          class="bg-red-100  px-0.05">你有太多的抱怨</span>，<span
+                          class="bg-red-100  px-0.05">跌倒了</span>就不该<span class="bg-red-100  px-0.05">继续往前走</span>，<span
+                          class="bg-red-100  px-0.05">为什么</span>，<span class="bg-red-100  px-0.05">人要这么的脆弱堕</span>
+                      </td>
+                      <td>
+                        对<span class="bg-blue-100  px-0.05">强化学习</span>如果<span
+                          class="bg-blue-100  px-0.05">实验遇到了瓶颈</span>，<span
+                          class="bg-blue-100  px-0.05">损失值</span>就不该<span class="bg-blue-100  px-0.05">太大动荡</span>，<span
+                          class="bg-blue-100  px-0.05">看梯度啊</span>，<span class="bg-blue-100  px-0.05">网络何时被优化好</span>
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/editing_singing_jaychou_gen2.wav">
+                        </audio>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td rowspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/jaychou.wav">
-                      </audio>
-                      周杰伦 (Chinese singer)
-                    </td>
-                    <td>
-                      对<span class="bg-red-100  px-0.05">这个世界</span>如果你有太多的<span
-                        class="bg-red-100  px-0.05">抱怨</span>，跌倒了就不该<span
-                        class="bg-red-100  px-0.05">继续往前走</span>，为什么，人要这么的<span class="bg-red-100  px-0.05">脆弱</span>堕
-                    </td>
-                    <td>
-                      对<span class="bg-blue-100  px-0.05">你的人生</span>如果你有太多的<span
-                        class="bg-blue-100  px-0.05">期盼</span>，跌倒了就不该<span
-                        class="bg-blue-100  px-0.05">低头认输</span>，为什么，人要这么的<span class="bg-blue-100  px-0.05">彷徨</span>堕
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/editing_singing_jaychou_gen.wav">
-                      </audio>
-                    </td>
-                  </tr>
+                  </tbody>
+                </table>
 
-                  <tr>
-                    <td>
-                      对<span class="bg-red-100  px-0.05">这个世界</span>如果<span
-                        class="bg-red-100  px-0.05">你有太多的抱怨</span>，<span class="bg-red-100  px-0.05">跌倒了</span>就不该<span
-                        class="bg-red-100  px-0.05">继续往前走</span>，<span class="bg-red-100  px-0.05">为什么</span>，<span
-                        class="bg-red-100  px-0.05">人要这么的脆弱堕</span>
-                    </td>
-                    <td>
-                      对<span class="bg-blue-100  px-0.05">强化学习</span>如果<span
-                        class="bg-blue-100  px-0.05">实验遇到了瓶颈</span>，<span
-                        class="bg-blue-100  px-0.05">损失值</span>就不该<span class="bg-blue-100  px-0.05">太大动荡</span>，<span
-                        class="bg-blue-100  px-0.05">看梯度啊</span>，<span class="bg-blue-100  px-0.05">网络何时被优化好</span>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/editing_singing_jaychou_gen2.wav">
-                      </audio>
-                    </td>
-                  </tr>
-
-                </tbody>
-              </table>
-
-              <p class="mt-2 text-sm text-gray-600 italic">
-                <i>
-                  <b>Note</b>: In the editing tasks, the raw audio serves simultaneously as the prosodic source, style
-                  reference, and timbre reference during inference.
-                </i>
-              </p>
+                <p class="mt-2 text-sm text-gray-600 italic">
+                  <i>
+                    <b>Note</b>: In the editing tasks, the raw audio serves simultaneously as the prosodic source, style
+                    reference, and timbre reference during inference.
+                  </i>
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="mt-0 mb-8 pt-10" id="vc">
-            <h5>Unified Zero-Shot VC and SVC</h5>
-          </div>
+            <div class="mt-0 mb-8 pt-10" id="vc">
+              <h5>Unified Zero-Shot VC and SVC</h5>
+            </div>
 
-          <div class="mt-8 mb-8">
-            <p class="mt-4 text-base">
-              To conduct voice conversion (VC) or singing voice
-              conversion (SVC) tasks, Vevo2 exhibits two distinctive
-              characteristics. First, Vevo2 uses a <b>unified content-style tokenizer</b> both speech and singing
-              voice domains. Second, Vevo2 supports both <b>style-preserved</b> and <b>style-converted
-                conversion</b> tasks:
-            </p>
+            <div class="mt-8 mb-8">
+              <p class="mt-4 text-base">
+                To conduct voice conversion (VC) or singing voice
+                conversion (SVC) tasks, Vevo2 exhibits two distinctive
+                characteristics. First, Vevo2 uses a <b>unified content-style tokenizer</b> both speech and singing
+                voice domains. Second, Vevo2 supports both <b>style-preserved</b> and <b>style-converted
+                  conversion</b> tasks:
+              </p>
 
-            <ul class="flex flex-col space-y-4 list-disc pl-6 text-base text-gray-700">
-              <li class="me-2">
-                When using
-                only the FM stage, i.e., without using the style reference (just as the first and the
-                third cases of the following table), Vevo2 can only convert the timbre but <i>preserve the style of
+              <ul class="flex flex-col space-y-4 list-disc pl-6 text-base text-gray-700">
+                <li class="me-2">
+                  When using
+                  only the FM stage, i.e., without using the style reference (just as the first and the
+                  third cases of the following table), Vevo2 can only convert the timbre but <i>preserve the style of
+                    the
+                    source audio</i>.
+                </li>
+                <li class="me-2">
+                  When using both the AR and the FM stages, Vevo2 can convert both the timbre and
                   the
-                  source audio</i>.
-              </li>
-              <li class="me-2">
-                When using both the AR and the FM stages, Vevo2 can convert both the timbre and
-                the
-                style of the source audio, resulting in <i>higher similarity to the target speaker(singer)</i>.
-              </li>
-            </ul>
-          </div>
-
-          <div class="w-full overflow-x-auto">
-            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
-              <table class="table-gallery">
-                <thead>
-                  <tr>
-                    <th style="text-align: center; width: 8%;">Task</th>
-                    <th style="text-align: center; width: 23%;">Source Audio</th>
-                    <th style="text-align: center; width: 23%;">Style Reference</th>
-                    <th style="text-align: center; width: 23%;">Timbre Reference</th>
-                    <th style="text-align: center; width: 23%;">Results</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Voice Conversion</b>
-                    </td>
-                    <td rowspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/tts_ref.wav">
-                      </audio>
-                      <!-- Who would've imagined that people could really turn into water... -->
-                      <span class="text-blue-500">American-accented</span>, Female
-                    </td>
-                    <td>
-                      /
-                    </td>
-                    <td rowspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_accent_ref.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, Male
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/vc_style_preserved.wav">
-                      </audio>
-                      <span class="text-blue-500">American-accented</span>, <span class="text-red-500">Male</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_accent_ref.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, Male
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/vc_style_converted.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Male</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Singing Voice Conversion</b>
-                    </td>
-                    <td rowspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/mj.wav">
-                      </audio>
-                      <!-- What about sunrise? What about rain? What about all the things that you said we were to gain? -->
-                      Michael Jackson (American singer)
-                    </td>
-                    <td>
-                      /
-                    </td>
-                    <td rowspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/adele_raw.wav">
-                      </audio>
-                      Adele (British singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/svc_style_preserved.wav">
-                      </audio>
-                      <span class="text-blue-500">More head resonance</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/adele_raw.wav">
-                      </audio>
-                      Adele (British singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/svc_style_converted.wav">
-                      </audio>
-                      <span class="text-blue-500">More chest resonance</span>
-                    </td>
-                  </tr>
-
-
-                </tbody>
-              </table>
+                  style of the source audio, resulting in <i>higher similarity to the target speaker(singer)</i>.
+                </li>
+              </ul>
             </div>
 
-            <p class="mt-2 text-sm text-gray-600 italic">
-              <i>
-                <b>Note</b>: In the VC task, the prosodic
-                source is not used during the inference. In the SVC task, we use source audio as the prosodic source.
-              </i>
-            </p>
-          </div>
+            <div class="w-full overflow-x-auto">
+              <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+                <table class="table-gallery">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center; width: 8%;">Task</th>
+                      <th style="text-align: center; width: 23%;">Source Audio</th>
+                      <th style="text-align: center; width: 23%;">Style Reference</th>
+                      <th style="text-align: center; width: 23%;">Timbre Reference</th>
+                      <th style="text-align: center; width: 23%;">Results</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="2">
+                        <b>Voice Conversion</b>
+                      </td>
+                      <td rowspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/tts_ref.wav">
+                        </audio>
+                        <!-- Who would've imagined that people could really turn into water... -->
+                        <span class="text-blue-500">American-accented</span>, Female
+                      </td>
+                      <td>
+                        /
+                      </td>
+                      <td rowspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/disentangledtts_accent_ref.wav">
+                        </audio>
+                        <span class="text-blue-500">Hindi-accented</span>, Male
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/vc_style_preserved.wav">
+                        </audio>
+                        <span class="text-blue-500">American-accented</span>, <span class="text-red-500">Male</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/disentangledtts_accent_ref.wav">
+                        </audio>
+                        <span class="text-blue-500">Hindi-accented</span>, Male
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/vc_style_converted.wav">
+                        </audio>
+                        <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Male</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="2">
+                        <b>Singing Voice Conversion</b>
+                      </td>
+                      <td rowspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/mj.wav">
+                        </audio>
+                        <!-- What about sunrise? What about rain? What about all the things that you said we were to gain? -->
+                        Michael Jackson (American singer)
+                      </td>
+                      <td>
+                        /
+                      </td>
+                      <td rowspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/adele_raw.wav">
+                        </audio>
+                        Adele (British singer)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/svc_style_preserved.wav">
+                        </audio>
+                        <span class="text-blue-500">More head resonance</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/adele_raw.wav">
+                        </audio>
+                        Adele (British singer)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/svc_style_converted.wav">
+                        </audio>
+                        <span class="text-blue-500">More chest resonance</span>
+                      </td>
+                    </tr>
 
 
-          <div class="mt-0 mb-8 pt-10" id="sc">
-            <h5>Versatile Speech and Singing Style Conversions</h5>
-          </div>
+                  </tbody>
+                </table>
+              </div>
 
-          <div class="mt-8 mb-8">
-            <p class="mt-4 text-base">
-              Vevo2 enables versatile speech and singing style conversion tasks. Specifically, the system can
-              utilize different style references (such as different accents, emotions, singing techniques, etc.) to
-              transform the source audio's style, while preserving its original timbre by using itself as the timbre
-              reference:
-            </p>
-          </div>
-
-          <div class="w-full overflow-x-auto">
-            <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
-              <table class="table-gallery">
-                <thead>
-                  <tr>
-                    <th style="text-align: center; width: 16%;">Task</th>
-                    <th style="text-align: center; width: 28%;">Source Audio</th>
-                    <th style="text-align: center; width: 28%;">Style Reference</th>
-                    <th style="text-align: center; width: 28%;">Results</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                  <tr>
-                    <td style="background-color: #f4f4f4;">
-                      <b>Accent Conversion</b>
-                    </td>
-                    <td rowspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_accent_input.wav">
-                      </audio>
-                      <span class="text-blue-500">American-accented</span>, <span class="text-red-500">Female</span>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_accent_ref.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, Male
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_accent_gen.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="background-color: #f4f4f4;">
-                      <b>Emotion Conversion</b>
-                    </td>
-
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/taiyizhenren.wav">
-                      </audio>
-                      <span class="text-blue-500">Emotional</span>, Male
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_emotion_gen.wav">
-                      </audio>
-                      <span class="text-blue-500">Emotional</span>, <span class="text-red-500">Female</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="background-color: #f4f4f4;">
-                      <b>Whisper-to-Normal Conversion</b>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_whisper2normal_input.wav">
-                      </audio>
-                      Whisper
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_whisper2normal_ref.wav">
-                      </audio>
-                      <span class="text-blue-500">Normal</span>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_whisper2normal_gen.wav">
-                      </audio>
-                      <span class="text-blue-500">Normal</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="3">
-                      <b>Singing Style Conversion</b>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_singing_input.wav">
-                      </audio>
-                      Normal, <span class="text-red-500">Male</span>
-                    </td>
-                    <td rowspan="3">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_singing_ref.wav">
-                      </audio>
-                      <span class="text-blue-500">Extensive vibratos and tempo rubato</span>, Female
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_singing_gen.wav">
-                      </audio>
-                      <span class="text-blue-500">More Vibratos</span>, <span class="text-red-500">Male</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td rowspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/taozhe.wav">
-                      </audio>
-                      陶喆 (Chinese singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_singing_taozhe_gen.wav">
-                      </audio>
-                      <span class="text-blue-500">More Vibratos, Tempo rubato</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/style_singing_taozhe_gen2.wav">
-                      </audio>
-                      <span class="text-blue-500">More Vibratos, Tempo rubato</span>
-                    </td>
-                  </tr>
-
-                </tbody>
-              </table>
+              <p class="mt-2 text-sm text-gray-600 italic">
+                <i>
+                  <b>Note</b>: In the VC task, the prosodic
+                  source is not used during the inference. In the SVC task, we use source audio as the prosodic source.
+                </i>
+              </p>
             </div>
 
-            <p class="mt-2 text-sm text-gray-600 italic">
-              <i>
-                <b>Note</b>: The source audio serves as the timbre reference in these conversion tasks. On the speech
-                domain (such as the first three cases), the prosodic
-                source is not used. On the singing domain (such as the last three case), the source
-                audio also serves as the prosodic source.
-              </i>
-            </p>
+
+            <div class="mt-0 mb-8 pt-10" id="sc">
+              <h5>Versatile Speech and Singing Style Conversions</h5>
+            </div>
+
+            <div class="mt-8 mb-8">
+              <p class="mt-4 text-base">
+                Vevo2 enables versatile speech and singing style conversion tasks. Specifically, the system can
+                utilize different style references (such as different accents, emotions, singing techniques, etc.) to
+                transform the source audio's style, while preserving its original timbre by using itself as the timbre
+                reference:
+              </p>
+            </div>
+
+            <div class="w-full overflow-x-auto">
+              <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
+                <table class="table-gallery">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center; width: 16%;">Task</th>
+                      <th style="text-align: center; width: 28%;">Source Audio</th>
+                      <th style="text-align: center; width: 28%;">Style Reference</th>
+                      <th style="text-align: center; width: 28%;">Results</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td style="background-color: #f4f4f4;">
+                        <b>Accent Conversion</b>
+                      </td>
+                      <td rowspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_accent_input.wav">
+                        </audio>
+                        <span class="text-blue-500">American-accented</span>, <span class="text-red-500">Female</span>
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/disentangledtts_accent_ref.wav">
+                        </audio>
+                        <span class="text-blue-500">Hindi-accented</span>, Male
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_accent_gen.wav">
+                        </audio>
+                        <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style="background-color: #f4f4f4;">
+                        <b>Emotion Conversion</b>
+                      </td>
+
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/taiyizhenren.wav">
+                        </audio>
+                        <span class="text-blue-500">Emotional</span>, Male
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_emotion_gen.wav">
+                        </audio>
+                        <span class="text-blue-500">Emotional</span>, <span class="text-red-500">Female</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style="background-color: #f4f4f4;">
+                        <b>Whisper-to-Normal Conversion</b>
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_whisper2normal_input.wav">
+                        </audio>
+                        Whisper
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_whisper2normal_ref.wav">
+                        </audio>
+                        <span class="text-blue-500">Normal</span>
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_whisper2normal_gen.wav">
+                        </audio>
+                        <span class="text-blue-500">Normal</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style="background-color: #f4f4f4;" rowspan="3">
+                        <b>Singing Style Conversion</b>
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_singing_input.wav">
+                        </audio>
+                        Normal, <span class="text-red-500">Male</span>
+                      </td>
+                      <td rowspan="3">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_singing_ref.wav">
+                        </audio>
+                        <span class="text-blue-500">Extensive vibratos and tempo rubato</span>, Female
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_singing_gen.wav">
+                        </audio>
+                        <span class="text-blue-500">More Vibratos</span>, <span class="text-red-500">Male</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td rowspan="2">
+                        <audio controls preload="auto">
+                          <source src="data/gallery/taozhe.wav">
+                        </audio>
+                        陶喆 (Chinese singer)
+                      </td>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_singing_taozhe_gen.wav">
+                        </audio>
+                        <span class="text-blue-500">More Vibratos, Tempo rubato</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <audio controls preload="auto">
+                          <source src="data/gallery/style_singing_taozhe_gen2.wav">
+                        </audio>
+                        <span class="text-blue-500">More Vibratos, Tempo rubato</span>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="mt-2 text-sm text-gray-600 italic">
+                <i>
+                  <b>Note</b>: The source audio serves as the timbre reference in these conversion tasks. On the speech
+                  domain (such as the first three cases), the prosodic
+                  source is not used. On the singing domain (such as the last three case), the source
+                  audio also serves as the prosodic source.
+                </i>
+              </p>
+            </div>
+
+
           </div>
-
-
         </div>
       </div>
     </div>
-  </div>
 
 
 </body>
